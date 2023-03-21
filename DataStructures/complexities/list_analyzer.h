@@ -1,7 +1,6 @@
 #pragma once
 
 #include <complexities/complexity_analyzer.h>
-#include <iterator>
 #include <list>
 #include <random>
 #include <vector>
@@ -76,12 +75,12 @@ namespace ds::utils
 
     template<class List>
     ListAnalyzer<List>::ListAnalyzer(const std::string& name) :
-        ComplexityAnalyzer<List>(name, std::function<void(List&, size_t)>()),
-        //                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        // TODO 01 Namiesto defaultne vytvorenÈho - pr·zdneho - funkËnÈho objektu je potrebnÈ
-        //         parameter spr·vne inicializovaù!
-        rngData_(std::random_device()()),
-        rngIndex_(std::random_device()()),
+        ComplexityAnalyzer<List>(name, [this](List& list, size_t n)
+            {
+                this->insertNElements(list, n);
+            }),
+        rngData_(144),
+        rngIndex_(144),
         index_(0),
         data_(0)
     {
@@ -125,9 +124,8 @@ namespace ds::utils
     template <class List>
     void ListInsertAnalyzer<List>::executeOperation(List& structure)
     {
-        // TODO 01
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        auto data = this->getRandomData();
+        structure.insert(structure.begin(), data);
     }
 
     template <class List>
@@ -139,8 +137,6 @@ namespace ds::utils
     template <class List>
     void ListRemoveAnalyzer<List>::executeOperation(List& structure)
     {
-        // TODO 01
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        structure.erase(structure.begin());
     }
 }

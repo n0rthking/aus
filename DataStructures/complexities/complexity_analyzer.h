@@ -101,9 +101,9 @@ namespace ds::utils
             std::function<void(Structure&, size_t)> insertN
         );
 
-        virtual void beforeOperation(Structure& structure) {};
+        virtual void beforeOperation(Structure& structure) {}
         virtual void executeOperation(Structure& structure) = 0;
-        virtual void afterOperation(Structure& structure) {};
+        virtual void afterOperation(Structure& structure) {}
 
     private:
         using duration_t = std::chrono::nanoseconds;
@@ -141,9 +141,29 @@ namespace ds::utils
     template<class Structure>
     void ComplexityAnalyzer<Structure>::analyze(Structure structurePrototype)
     {
-        // TODO 01
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        this->resetSuccess();
+        std::map<size_t, std::vector<duration_t>> data;
+
+        for (int r = 0; r < this->getReplicationCount(); ++r)
+        {
+            Structure structure(structurePrototype);
+            for (int step = 0; step < this->getStepCount(); ++step)
+            {
+                const size_t expectedSize = (step + 1) * this->getStepSize();
+                const size_t insertCount = expectedSize - structure.size();
+                insertN_(structure, insertCount);
+                this->beforeOperation(structure);
+                auto start = std::chrono::high_resolution_clock::now();
+                this->executeOperation(structure);
+                auto end = std::chrono::high_resolution_clock::now();
+                this->afterOperation(structure);
+                auto duration = std::chrono::duration_cast<duration_t>(end - start);
+                data[expectedSize].push_back(duration);
+            }
+        }
+
+        this->saveToCsvFile(data);
+        this->setSuccess();
     }
 
     template <class Structure>
