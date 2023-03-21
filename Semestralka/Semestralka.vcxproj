@@ -129,13 +129,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Semestralka.cpp" />
+    <ClCompile Include="PrvaUroven.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="Kraj.h" />
     <ClInclude Include="Obec.h" />
     <ClInclude Include="Okres.h" />
+    <ClInclude Include="PrvaUroven.h" />
     <ClInclude Include="rapidcsv.h" />
     <ClInclude Include="UzemnaJednotka.h" />
   </ItemGroup>
