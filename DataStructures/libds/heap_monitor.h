@@ -1,10 +1,26 @@
 #pragma once
 
+/**
+ * @brief Creates default-constructed object at @p address.
+ */
+template<typename T>
+T* placement_new(T* address)
+{
+	return new (address) T();
+}
+
+/**
+ * @brief Creates copy-constructed object from @p origin at @p address.
+ */
+template<typename T>
+T* placement_copy(T* address, const T& origin)
+{
+	return new (address) T(origin);
+}
+
 #if (defined(_WIN32) || defined(_WIN64)) \
     && !(defined(__MINGW32__) || defined(__MINGW64__))
-#define LIBDS_USE_HEAP_MONITOR
 #define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
 #include <crtdbg.h>
 
 #define new new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
