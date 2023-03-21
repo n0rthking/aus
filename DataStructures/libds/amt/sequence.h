@@ -20,8 +20,8 @@ namespace ds::amt {
 		virtual BlockType& insertFirst() = 0;
 		virtual BlockType& insertLast() = 0;
 		virtual BlockType& insert(size_t index) = 0;
-		virtual BlockType& insertAfter(const BlockType& block) = 0;
-		virtual BlockType& insertBefore(const BlockType& block) = 0;
+		virtual BlockType& insertAfter(BlockType& block) = 0;
+		virtual BlockType& insertBefore(BlockType& block) = 0;
 
 		virtual void removeFirst() = 0;
 		virtual void removeLast() = 0;
