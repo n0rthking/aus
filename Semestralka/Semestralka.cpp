@@ -5,6 +5,8 @@
 #include "rapidcsv.h"
 #include "Algorithm.h"
 #include "Obec.h"
+#include "Kraj.h"
+#include "Okres.h"
 #include <windows.h>
 
 using DataType = Obec;
