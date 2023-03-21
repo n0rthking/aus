@@ -12,6 +12,10 @@ using DataType = UzemnaJednotka;
 using InputType = ds::amt::ImplicitSequence<DataType>;
 using ResultType = ds::amt::ImplicitSequence<DataType>;
 
+const int OPT_CONTAINS = 1;
+const int OPT_STARTSWITH = 2;
+const int OPT_INVALID = -1;
+
 class PrvaUroven
 {
 private:
@@ -22,9 +26,10 @@ private:
 	std::string userInput;
 public:
 	PrvaUroven();
-	bool zistiParametre();
+	int zistiParametre();
 	void nacitajVstup();
-	void filtrujZaznamy();
+	void filtrujZaznamyContains(const std::string& subString);
+	void filtrujZaznamyStartsWith(const std::string& subString);
 	void vypisVystup();
 };
 
