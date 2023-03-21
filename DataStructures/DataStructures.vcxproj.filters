@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tests">
+      <UniqueIdentifier>{08e1640e-3ce0-4a3c-897b-87259bfa7179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests\mm">
+      <UniqueIdentifier>{28b6a0c4-f66e-42a1-bbe7-b5a6f7b29302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests\adt">
+      <UniqueIdentifier>{61bd0a31-6ebe-4523-8728-2a78c33a6956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests\amt">
+      <UniqueIdentifier>{39d85cef-4ae7-4975-9ea7-fe3218498f51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="complexities">
+      <UniqueIdentifier>{4f3331b7-9652-44d2-bd6e-f105a41d1881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests\_details">
+      <UniqueIdentifier>{2a25a8b8-2ebc-448a-a6d0-6f4af8106503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libds">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="libds\mm">
+      <UniqueIdentifier>{84877cd1-ab01-4a8d-9a5d-0889c4cb5e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libds\amt">
+      <UniqueIdentifier>{225656ad-1105-4dd1-bef7-57af15d21d2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libds\adt">
+      <UniqueIdentifier>{f8810cbf-9331-4376-bcde-211134e7d343}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tests\_details\test.cpp">
+      <Filter>tests\_details</Filter>
+    </ClCompile>
+    <ClCompile Include="complexities\complexity_analyzer.cpp">
+      <Filter>complexities</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\_details\console_output.cpp">
+      <Filter>tests\_details</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\_details\console.cpp">
+      <Filter>tests\_details</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tests\_details\test.hpp">
+      <Filter>tests\_details</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\mm\mm.test.h">
+      <Filter>tests\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\root.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\mm\memory_manager.test.h">
+      <Filter>tests\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\amt.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\sequence.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\implicit_sequence.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\explicit_sequence.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\hierarchy.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\implicit_hierarchy.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="complexities\list_analyzer.h">
+      <Filter>complexities</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\mm\memory_manager.h">
+      <Filter>libds\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\mm\memory_omanip.h">
+      <Filter>libds\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\abstract_data_type.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\array.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\list.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\queue.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\stack.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\table.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\tree.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\sorts.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\abstract_memory_type.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\explicit_hierarchy.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\explicit_network.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\explicit_sequence.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\hierarchy.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\implicit_hierarchy.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\implicit_sequence.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\network.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\amt\sequence.h">
+      <Filter>libds\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\constants.h">
+      <Filter>libds</Filter>
+    </ClInclude>
+    <ClInclude Include="complexities\complexity_analyzer.h">
+      <Filter>complexities</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\_details\console.hpp">
+      <Filter>tests\_details</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\_details\console_output.hpp">
+      <Filter>tests\_details</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\adt\priority_queue.h">
+      <Filter>libds\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\mm\compact_memory_manager.h">
+      <Filter>libds\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\mm\compact_memory_manager.test.h">
+      <Filter>tests\mm</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\amt\explicit_hierarchy.test.h">
+      <Filter>tests\amt</Filter>
+    </ClInclude>
+    <ClInclude Include="libds\heap_monitor.h">
+      <Filter>libds</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\adt.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\array.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\list.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\priority_queue.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\queue.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\sorts.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\stack.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\table.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\adt\tree.test.h">
+      <Filter>tests\adt</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
