@@ -23,7 +23,7 @@ int PrvaUroven::zistiParametre()
     std::cout << "Zadaj substring: ";
     std::cin >> userInput;
 
-    std::cout << "Zadaj [c]ontains alebo [s]tartsWith:";
+    std::cout << "Zadaj [c]ontains alebo [s]tartsWith: ";
     std::string userOptStr;
     std::cin >> userOptStr;
 
