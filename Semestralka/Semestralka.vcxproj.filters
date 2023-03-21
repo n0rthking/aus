@@ -35,5 +35,8 @@
     <ClInclude Include="rapidcsv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UzemnaJednotka.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

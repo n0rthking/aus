@@ -4,23 +4,23 @@
 #include <libds/amt/implicit_sequence.h>
 #include "rapidcsv.h"
 #include "Algorithm.h"
-#include "Obec.h"
-#include "Kraj.h"
-#include "Okres.h"
+#include "UzemnaJednotka.h"
 #include <windows.h>
 
-using DataType = Obec;
+using DataType = UzemnaJednotka;
 using ResultType = ds::amt::ImplicitSequence<DataType>;
 
 int main() {
     SetConsoleOutputCP(1250);
     SetConsoleCP(1250);
 
-    rapidcsv::Document obce("data/obce.csv",
-        rapidcsv::LabelParams(0, 0),
-        rapidcsv::SeparatorParams(';'));
+    std::string subor;
+    std::cout << "Zadaj nazov suboru: ";
+    std::cin >> subor;
 
-    std::vector<std::string> nazov = obce.GetColumn<std::string>("officialTitle");
+    rapidcsv::Document uj("data/" + subor, rapidcsv::LabelParams(0, 0), rapidcsv::SeparatorParams(';'));
+
+    std::vector<std::string> nazov = uj.GetColumn<std::string>("officialTitle");
 
     ResultType inputSeq;
     ResultType resultSeq;
@@ -47,7 +47,7 @@ int main() {
 
     std::cout << "---------------" << std::endl;
 
-    for (auto& element : resultSeq) {
+    for (const auto& element : resultSeq) {
         std::cout << element.officialTitle << std::endl;
     }
 
