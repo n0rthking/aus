@@ -5,6 +5,12 @@ bool Citac::skontrolujSubor()
 	return suborStream.is_open();
 }
 
+void Citac::preskocPrvyRiadok()
+{
+	std::string obsah;
+	std::getline(suborStream, obsah);
+}
+
 bool Citac::citajRiadok()
 {
 	return !std::getline(suborStream, aktualnyRiadok).fail();
@@ -12,9 +18,6 @@ bool Citac::citajRiadok()
 
 UzemnaJednotka Citac::vytvorUJ()
 {
-	if (aktualnyRiadok.find("officialTitle") != std::string::npos) {
-		return UzemnaJednotka();
-	}
 	std::string hodnota;
 	std::stringstream strstrm(aktualnyRiadok);
 	UzemnaJednotka uj;

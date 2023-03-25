@@ -19,13 +19,4 @@ public:
         shortTitle = "";
         note = "";
     }
-
-    UzemnaJednotka(const std::string& ot) {
-        sortNumber = 0;
-        code = "";
-        officialTitle = ot;
-        mediumTitle = "";
-        shortTitle = "";
-        note = "";
-    }
 };

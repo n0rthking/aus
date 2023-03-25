@@ -16,6 +16,7 @@ public:
 	}
 
 	bool skontrolujSubor();
+	void preskocPrvyRiadok();
 	bool citajRiadok();
 	UzemnaJednotka vytvorUJ();
 	void zatvorSubor();

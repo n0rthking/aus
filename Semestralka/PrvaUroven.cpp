@@ -45,18 +45,22 @@ int PrvaUroven::zistiParametre()
 bool PrvaUroven::nacitajVstup()
 {
     Citac citac("data/" + inputFilename);
+
     if (!citac.skontrolujSubor()) {
         std::cout << "Chybne zadany subor" << std::endl;
         return false;
     }
 
     size_t pocet = 0;
+    citac.preskocPrvyRiadok();
+
     while (citac.citajRiadok()) {
         UzemnaJednotka uj = citac.vytvorUJ();
         inputSequence.insertLast().data_ = uj;
         ++pocet;
     }
-    std::cout << pocet << std::endl;
+
+    std::cout << "Nacitanych " << pocet << " zaznamov zo suboru " << inputFilename << std::endl;
     citac.zatvorSubor();
 
     return true;
