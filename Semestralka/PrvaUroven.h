@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 #include <libds/amt/implicit_sequence.h>
-#include "rapidcsv.h"
 #include "Algorithm.h"
 #include "UzemnaJednotka.h"
+#include "Citac.h"
 
 using DataType = UzemnaJednotka;
 using InputType = ds::amt::ImplicitSequence<DataType>;
@@ -27,7 +27,7 @@ private:
 public:
 	PrvaUroven();
 	int zistiParametre();
-	void nacitajVstup();
+	bool nacitajVstup();
 	void filtrujZaznamyContains(const std::string& subString);
 	void filtrujZaznamyStartsWith(const std::string& subString);
 	void vypisVystup();

@@ -4,14 +4,15 @@ PrvaUroven::PrvaUroven()
 {
     int retVal = zistiParametre();
     if (retVal != OPT_INVALID) {
-        nacitajVstup();
-        if (retVal == OPT_CONTAINS) {
-            filtrujZaznamyContains(userInput);
+        if (nacitajVstup()) {
+            if (retVal == OPT_CONTAINS) {
+                filtrujZaznamyContains(userInput);
+            }
+            if (retVal == OPT_STARTSWITH) {
+                filtrujZaznamyStartsWith(userInput);
+            }
+            vypisVystup();
         }
-        if (retVal == OPT_STARTSWITH) {
-            filtrujZaznamyStartsWith(userInput);
-        }
-        vypisVystup();
     }
 }
 
@@ -41,13 +42,24 @@ int PrvaUroven::zistiParametre()
     return OPT_INVALID;
 }
 
-void PrvaUroven::nacitajVstup()
+bool PrvaUroven::nacitajVstup()
 {
-    rapidcsv::Document uj("data/" + inputFilename, rapidcsv::LabelParams(0, 0), rapidcsv::SeparatorParams(';'));
-    std::vector<std::string> nazov = uj.GetColumn<std::string>("officialTitle");
-    for (const auto& element : nazov) {
-        inputSequence.insertLast().data_ = element;
+    Citac citac("data/" + inputFilename);
+    if (!citac.skontrolujSubor()) {
+        std::cout << "Chybne zadany subor" << std::endl;
+        return false;
     }
+
+    size_t pocet = 0;
+    while (citac.citajRiadok()) {
+        UzemnaJednotka uj = citac.vytvorUJ();
+        inputSequence.insertLast().data_ = uj;
+        ++pocet;
+    }
+    std::cout << pocet << std::endl;
+    citac.zatvorSubor();
+
+    return true;
 }
 
 void PrvaUroven::filtrujZaznamyContains(const std::string& subString)
