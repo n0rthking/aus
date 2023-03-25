@@ -140,7 +140,6 @@
     <ClInclude Include="Obec.h" />
     <ClInclude Include="Okres.h" />
     <ClInclude Include="PrvaUroven.h" />
-    <ClInclude Include="rapidcsv.h" />
     <ClInclude Include="UzemnaJednotka.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
