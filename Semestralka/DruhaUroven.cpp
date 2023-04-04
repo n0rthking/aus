@@ -77,8 +77,6 @@ void DruhaUroven::NacitajObce()
 
     while (citacObce.citajRiadok()) {
         UzemnaJednotka uj = citacObce.vytvorUJ();
-        int susEndIndex = uj.code.find(uj.note);
-        std::string cleanCode = uj.code.substr(3, uj.code.length() - susEndIndex - 4);
 
         if (uj.code.find("ZZZZZ") != std::string::npos) {
             auto& zahranicieVelaZ = *hierarchy.accessRoot()->sons_->access(8)->data_->sons_->access(1)->data_;
@@ -95,11 +93,13 @@ void DruhaUroven::NacitajObce()
             continue;
         }
 
-        int krajIndex = DekodujIndexKraja(cleanCode);
-        int okresIndex = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
-        auto& currentOkres = *hierarchy.accessRoot()->sons_->access(krajIndex)->data_->sons_->access(okresIndex)->data_;
-        int fuckingIndex = currentOkres.sons_->size() - 1;
-        auto& aktualnySyn = hierarchy.emplaceSon(currentOkres, fuckingIndex <= 0 ? 0 : fuckingIndex);
+        // index okresu je posledne cislo z trojcislia zacinajuce za retazcom SK0, pozor v hexa sustave
+        int indexOkresu = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
+        // index kraja ziskame dekodovanim prvych 2 cisiel z trojcislia
+        std::string indexKrajaStr = uj.code.substr(3, 2);
+        auto& aktualnyOkres = *hierarchy.accessRoot()->sons_->access(DekodujIndexKraja(indexKrajaStr))->data_->sons_->access(indexOkresu)->data_;
+        int poradieObce = aktualnyOkres.sons_->size() - 1;
+        auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, (poradieObce <= 0) ? 0 : poradieObce);
 
         aktualnySyn.data_.nastavAtributy(uj);
         aktualnySyn.data_.level = 3;
