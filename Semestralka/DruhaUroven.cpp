@@ -41,22 +41,27 @@ void DruhaUroven::NacitajOkresy()
     Citac citacOkresy("data/okresy.csv");
     citacOkresy.preskocPrvyRiadok();
 
-    int zahrCounter = 0;
+    int zahranicieCounter = 0;
     while (citacOkresy.citajRiadok()) {
         UzemnaJednotka uj = citacOkresy.vytvorUJ();
-        if (uj.note.length() <= 1) {
-            auto& currentKraj = *hierarchy.accessRoot()->sons_->access(8)->data_;
-            auto& aktualnySyn = hierarchy.emplaceSon(currentKraj, zahrCounter);
 
-            aktualnySyn.data_.nastavAtributy(uj);
-            aktualnySyn.data_.level = 2;
-            ++zahrCounter;
+        // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
+        if (uj.note.length() == 0) {
+            auto& zahranicieKraj = *hierarchy.accessRoot()->sons_->access(8)->data_;
+            auto& aktualnySynZahranicie = hierarchy.emplaceSon(zahranicieKraj, zahranicieCounter);
+
+            aktualnySynZahranicie.data_.nastavAtributy(uj);
+            aktualnySynZahranicie.data_.level = 2;
+            ++zahranicieCounter;
             continue;
         }
-        int krajIndex = std::stoi(uj.note.substr(0, 1)) - 1;
-        int sonIndex = std::stoi(uj.note.substr(uj.note.length() - 2, 2)) - 1;
-        auto& currentKraj = *hierarchy.accessRoot()->sons_->access(krajIndex)->data_;
-        auto& aktualnySyn = hierarchy.emplaceSon(currentKraj, sonIndex);
+
+        // index kraja je prvy znak v note
+        int indexKraja = std::stoi(uj.note.substr(0, 1)) - 1;
+        // poradie okresu v ramci jeho kraja su posledne 2 znaky v note
+        int indexOkresu = std::stoi(uj.note.substr(1, 2)) - 1;
+        auto& aktualnyKraj = *hierarchy.accessRoot()->sons_->access(indexKraja)->data_;
+        auto& aktualnySyn = hierarchy.emplaceSon(aktualnyKraj, indexOkresu);
 
         aktualnySyn.data_.nastavAtributy(uj);
         aktualnySyn.data_.level = 2;
