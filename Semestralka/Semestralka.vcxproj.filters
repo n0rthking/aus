@@ -24,6 +24,9 @@
     <ClCompile Include="Citac.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DruhaUroven.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Citac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DruhaUroven.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

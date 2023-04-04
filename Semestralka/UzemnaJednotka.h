@@ -10,6 +10,7 @@ public:
     std::string mediumTitle;
     std::string shortTitle;
     std::string note;
+    int level;
 
     UzemnaJednotka() {
         sortNumber = 0;
@@ -18,5 +19,26 @@ public:
         mediumTitle = "";
         shortTitle = "";
         note = "";
+        level = 0;
+    }
+
+    bool operator==(const UzemnaJednotka& other) const {
+        if (this->sortNumber != other.sortNumber
+            || this->code != other.code
+            || this->officialTitle != other.officialTitle
+            || this->mediumTitle != other.mediumTitle
+            || this->shortTitle != other.shortTitle
+            || this->note != other.note) {
+            return false;
+        }
+        return true;
+    }
+
+    std::string toStr() const {
+        std::string levelStr = "";
+        if (level != 0) {
+            levelStr = std::string(level, '\t');
+        }
+        return levelStr + std::to_string(this->sortNumber) + " " + this->code + " " + this->officialTitle + " " + this->note;
     }
 };

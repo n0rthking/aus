@@ -130,12 +130,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Citac.cpp" />
+    <ClCompile Include="DruhaUroven.cpp" />
     <ClCompile Include="PrvaUroven.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="Citac.h" />
+    <ClInclude Include="DruhaUroven.h" />
     <ClInclude Include="Kraj.h" />
     <ClInclude Include="Obec.h" />
     <ClInclude Include="Okres.h" />

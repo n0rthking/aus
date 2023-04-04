@@ -1,4 +1,4 @@
-ï»¿sortNumber;code;officialTitle;mediumTitle;shortTitle;note
+sortNumber;code;officialTitle;mediumTitle;shortTitle;note
 1;SK0101;Okres Bratislava I;Bratislava I;Bratislava I;101
 2;SK0102;Okres Bratislava II;Bratislava II;Bratislava II;102
 3;SK0103;Okres Bratislava III;Bratislava III;Bratislava III;103
@@ -30,8 +30,6 @@
 29;SK0235;Okres Ša¾a;Ša¾a;Ša¾a;405
 30;SK0236;Okres Topo¾èany;Topo¾èany;Topo¾èany;406
 31;SK0237;Okres Zlaté Moravce;Zlaté Moravce;Zlaté Moravce;407
-32;SK031A;Okres Tvrdošín;Tvrdošín;Tvrdošín;510
-33;SK031B;Okres Žilina;Žilina;Žilina;511
 34;SK0311;Okres Bytèa;Bytèa;Bytèa;501
 35;SK0312;Okres Èadca;Èadca;Èadca;502
 36;SK0313;Okres Dolný Kubín;Dolný Kubín;Dolný Kubín;503
@@ -41,10 +39,8 @@
 40;SK0317;Okres Námestovo;Námestovo;Námestovo;507
 41;SK0318;Okres Ružomberok;Ružomberok;Ružomberok;508
 42;SK0319;Okres Turèianske Teplice;Turèianske Teplice;Turèianske Teplice;509
-43;SK032A;Okres Ve¾ký Krtíš;Ve¾ký Krtíš;Ve¾ký Krtíš;610
-44;SK032B;Okres Zvolen;Zvolen;Zvolen;611
-45;SK032C;Okres Žarnovica;Žarnovica;Žarnovica;612
-46;SK032D;Okres Žiar nad Hronom;Žiar nad Hronom;Žiar nad Hronom;613
+32;SK031A;Okres Tvrdošín;Tvrdošín;Tvrdošín;510
+33;SK031B;Okres Žilina;Žilina;Žilina;511
 47;SK0321;Okres Banská Bystrica;Banská Bystrica;Banská Bystrica;601
 48;SK0322;Okres Banská Štiavnica;Banská Štiavnica;Banská Štiavnica;602
 49;SK0323;Okres Brezno;Brezno;Brezno;603
@@ -54,10 +50,10 @@
 53;SK0327;Okres Poltár;Poltár;Poltár;607
 54;SK0328;Okres Revúca;Revúca;Revúca;608
 55;SK0329;Okres Rimavská Sobota;Rimavská Sobota;Rimavská Sobota;609
-56;SK041A;Okres Stará ¼ubovòa;Stará ¼ubovòa;Stará ¼ubovòa;710
-57;SK041B;Okres Stropkov;Stropkov;Stropkov;711
-58;SK041C;Okres Svidník;Svidník;Svidník;712
-59;SK041D;Okres Vranov nad Top¾ou;Vranov nad Top¾ou;Vranov nad Top¾ou;713
+43;SK032A;Okres Ve¾ký Krtíš;Ve¾ký Krtíš;Ve¾ký Krtíš;610
+44;SK032B;Okres Zvolen;Zvolen;Zvolen;611
+45;SK032C;Okres Žarnovica;Žarnovica;Žarnovica;612
+46;SK032D;Okres Žiar nad Hronom;Žiar nad Hronom;Žiar nad Hronom;613
 60;SK0411;Okres Bardejov;Bardejov;Bardejov;701
 61;SK0412;Okres Humenné;Humenné;Humenné;702
 62;SK0413;Okres Kežmarok;Kežmarok;Kežmarok;703
@@ -67,8 +63,10 @@
 66;SK0417;Okres Prešov;Prešov;Prešov;707
 67;SK0418;Okres Sabinov;Sabinov;Sabinov;708
 68;SK0419;Okres Snina;Snina;Snina;709
-69;SK042A;Okres Spišská Nová Ves;Spišská Nová Ves;Spišská Nová Ves;810
-70;SK042B;Okres Trebišov;Trebišov;Trebišov;811
+56;SK041A;Okres Stará ¼ubovòa;Stará ¼ubovòa;Stará ¼ubovòa;710
+57;SK041B;Okres Stropkov;Stropkov;Stropkov;711
+58;SK041C;Okres Svidník;Svidník;Svidník;712
+59;SK041D;Okres Vranov nad Top¾ou;Vranov nad Top¾ou;Vranov nad Top¾ou;713
 71;SK0421;Okres Gelnica;Gelnica;Gelnica;801
 72;SK0422;Okres Košice I;Košice I;Košice I;802
 73;SK0423;Okres Košice II;Košice II;Košice II;803
@@ -78,5 +76,7 @@
 77;SK0427;Okres Michalovce;Michalovce;Michalovce;807
 78;SK0428;Okres Rožòava;Rožòava;Rožòava;808
 79;SK0429;Okres Sobrance;Sobrance;Sobrance;809
+69;SK042A;Okres Spišská Nová Ves;Spišská Nová Ves;Spišská Nová Ves;810
+70;SK042B;Okres Trebišov;Trebišov;Trebišov;811
 80;SKZZZ;Zahranièie;Zahranièie;Zahranièie;
 81;SKZZZZ;Zahranièie;Zahranièie;Zahranièie;

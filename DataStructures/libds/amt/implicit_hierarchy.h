@@ -74,9 +74,7 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     size_t ImplicitHierarchy<DataType, K>::level(const MemoryBlock<DataType>& node) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		return level(this->getMemoryManager()->calculateIndex(node));
 	}
 
 	template<typename DataType, size_t K>
@@ -94,9 +92,34 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     size_t ImplicitHierarchy<DataType, K>::degree(size_t index) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		size_t currentLevel = level(index);
+		size_t indexOfLast = this->size() - 1;
+		size_t depth = level(indexOfLast);
+
+		if (currentLevel == depth)
+		{
+			return 0;
+		}
+		else if (currentLevel == depth - 1)
+		{
+			size_t indexOfLastsParent = indexOfParent(indexOfLast);
+			if (index < indexOfLastsParent)
+			{
+				return K;
+			}
+			else if (index > indexOfLastsParent)
+			{
+				return 0;
+			}
+			else {
+				size_t mod = (this->size() - 1) % K;
+				return mod == 0 ? K : mod;
+			}
+		}
+		else
+		{
+			return K;
+		}
 	}
 
 	template<typename DataType, size_t K>
@@ -108,33 +131,28 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     MemoryBlock<DataType>* ImplicitHierarchy<DataType, K>::accessRoot() const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		return this->size() > 0 ? &this->getMemoryManager()->getBlockAt(0) : nullptr;
 	}
 
 	template<typename DataType, size_t K>
     MemoryBlock<DataType>* ImplicitHierarchy<DataType, K>::accessParent(const MemoryBlock<DataType>& node) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		size_t index = indexOfParent(node);
+		return INVALID_INDEX != index ? &this->getMemoryManager()->getBlockAt(index) : nullptr;
 	}
 
 	template<typename DataType, size_t K>
     MemoryBlock<DataType>* ImplicitHierarchy<DataType, K>::accessSon(const MemoryBlock<DataType>& node, size_t sonOrder) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		size_t index = indexOfSon(node, sonOrder);
+		return index < this->size() ? &this->getMemoryManager()->getBlockAt(index) : nullptr;
 	}
 
 	template<typename DataType, size_t K>
     MemoryBlock<DataType>* ImplicitHierarchy<DataType, K>::accessLastLeaf() const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		size_t size = this->size();
+		return size != 0 ? &this->getMemoryManager()->getBlockAt(size - 1) : nullptr;
 	}
 
 	template<typename DataType, size_t K>
@@ -170,17 +188,13 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     MemoryBlock<DataType>& ImplicitHierarchy<DataType, K>::insertLastLeaf()
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		return *this->getMemoryManager()->allocateMemory();
 	}
 
 	template<typename DataType, size_t K>
     void ImplicitHierarchy<DataType, K>::removeLastLeaf()
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		this->getMemoryManager()->releaseMemory();
 	}
 
 	template<typename DataType, size_t K>
@@ -192,9 +206,7 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     size_t ImplicitHierarchy<DataType, K>::indexOfParent(size_t index) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		return 0 == index ? INVALID_INDEX : (index - 1) / K;
 	}
 
 	template<typename DataType, size_t K>
@@ -206,9 +218,7 @@ namespace ds::amt {
 	template<typename DataType, size_t K>
     size_t ImplicitHierarchy<DataType, K>::indexOfSon(size_t indexOfParent, size_t sonOrder) const
 	{
-		// TODO 05
-		// po implementacii vymazte vyhodenie vynimky!
-		throw std::runtime_error("Not implemented yet");
+		return K * indexOfParent + sonOrder + 1;
 	}
 
 }
