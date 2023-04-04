@@ -20,5 +20,7 @@ public:
 	void NacitajKraje();
 	void NacitajOkresy();
 	void NacitajObce();
+private:
+	size_t DekodujIndexKraja(std::string indexStr);
 };
 

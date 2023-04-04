@@ -34,6 +34,16 @@ public:
         return true;
     }
 
+    void nastavAtributy(const UzemnaJednotka& other) {
+        this->sortNumber = other.sortNumber;
+        this->code = other.code;
+        this->officialTitle = other.officialTitle;
+        this->mediumTitle = other.mediumTitle;
+        this->shortTitle = other.shortTitle;
+        this->note = other.note;
+        this->level = other.level;
+    }
+
     std::string toStr() const {
         std::string levelStr = "";
         if (level != 0) {
