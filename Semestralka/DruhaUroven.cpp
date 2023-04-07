@@ -28,19 +28,20 @@ void DruhaUroven::NacitajKraje()
         if (uj.note.substr(8, 2) == "**") {
             continue;
         }
-        int indexOblasti = std::stoi(uj.note.substr(8, 1));
+        int indexOblasti = std::stoi(uj.note.substr(8, 1)) - 1;
         int indexKraja = std::stoi(uj.note.substr(9, 1));
 
-        if (indexKraja == 0) {
-            indexKraja += 1;
+        if (indexOblasti != 0) {
+            indexKraja -= 1;
         }
-        if (indexKraja == 1) {
-            auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti - 1);
+
+        if (indexKraja == 0) {
+            auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti);
             oblast.data_.officialTitle = "Oblast";
             oblast.data_.level = 1;
         }
-        auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti - 1)->data_, indexKraja - 1);
 
+        auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti)->data_, indexKraja);
         aktualnySyn.data_.nastavAtributy(uj);
         aktualnySyn.data_.level = 2;
     }
