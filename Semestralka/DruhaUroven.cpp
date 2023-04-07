@@ -23,14 +23,26 @@ void DruhaUroven::NacitajKraje()
     Citac citacKraje("data/kraje.csv");
     citacKraje.preskocPrvyRiadok();
 
-    size_t counter = 0;
     while (citacKraje.citajRiadok()) {
         UzemnaJednotka uj = citacKraje.vytvorUJ();
-        auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot(), counter);
+        if (uj.note.substr(8, 2) == "**") {
+            continue;
+        }
+        int indexOblasti = std::stoi(uj.note.substr(8, 1));
+        int indexKraja = std::stoi(uj.note.substr(9, 1));
+
+        if (indexKraja == 0) {
+            indexKraja += 1;
+        }
+        if (indexKraja == 1) {
+            auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti - 1);
+            oblast.data_.officialTitle = "Oblast";
+            oblast.data_.level = 1;
+        }
+        auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti - 1)->data_, indexKraja - 1);
 
         aktualnySyn.data_.nastavAtributy(uj);
-        aktualnySyn.data_.level = 1;
-        ++counter;
+        aktualnySyn.data_.level = 2;
     }
 
     citacKraje.zatvorSubor();
@@ -47,6 +59,7 @@ void DruhaUroven::NacitajOkresy()
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
         if (uj.note.length() == 0) {
+            continue;
             auto& zahranicieKraj = *hierarchy.accessRoot()->sons_->access(8)->data_;
             auto& aktualnySynZahranicie = hierarchy.emplaceSon(zahranicieKraj, zahranicieCounter);
 
@@ -60,11 +73,11 @@ void DruhaUroven::NacitajOkresy()
         int indexKraja = std::stoi(uj.note.substr(0, 1)) - 1;
         // poradie okresu v ramci jeho kraja su posledne 2 znaky v note
         int indexOkresu = std::stoi(uj.note.substr(1, 2)) - 1;
-        auto& aktualnyKraj = *hierarchy.accessRoot()->sons_->access(indexKraja)->data_;
+        auto& aktualnyKraj = vratKraj(uj.code, 3);
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyKraj, indexOkresu);
 
         aktualnySyn.data_.nastavAtributy(uj);
-        aktualnySyn.data_.level = 2;
+        aktualnySyn.data_.level = 3;
     }
 
     citacOkresy.zatvorSubor();
@@ -79,6 +92,7 @@ void DruhaUroven::NacitajObce()
         UzemnaJednotka uj = citacObce.vytvorUJ();
 
         if (uj.code.find("ZZZZZ") != std::string::npos) {
+            continue;
             auto& zahranicieVelaZ = *hierarchy.accessRoot()->sons_->access(8)->data_->sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
             aktualnySynZahranicia.data_.nastavAtributy(uj);
@@ -86,6 +100,7 @@ void DruhaUroven::NacitajObce()
             continue;
         }
         else if (uj.code.find("ZZZZ") != std::string::npos) {
+            continue;
             auto& zahranicieMaloZ = *hierarchy.accessRoot()->sons_->access(8)->data_->sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
             aktualnySynZahranicia.data_.nastavAtributy(uj);
@@ -96,47 +111,28 @@ void DruhaUroven::NacitajObce()
         // index okresu je posledne cislo z trojcislia zacinajuce za retazcom SK0, pozor v hexa sustave
         int indexOkresu = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
         // index kraja ziskame dekodovanim prvych 2 cisiel z trojcislia
-        std::string indexKrajaStr = uj.code.substr(3, 2);
-        auto& aktualnyOkres = *hierarchy.accessRoot()->sons_->access(DekodujIndexKraja(indexKrajaStr))->data_->sons_->access(indexOkresu)->data_;
+        auto& aktualnyOkres = *vratKraj(uj.code, 3).sons_->access(indexOkresu)->data_;
         int poradieObce = aktualnyOkres.sons_->size() - 1;
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, (poradieObce <= 0) ? 0 : poradieObce);
 
         aktualnySyn.data_.nastavAtributy(uj);
-        aktualnySyn.data_.level = 3;
+        aktualnySyn.data_.level = 4;
     }
 
     citacObce.zatvorSubor();
 }
 
-size_t DruhaUroven::DekodujIndexKraja(std::string indexStr)
+BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
 {
-    // 8 je index kraju zahranicie, ten nema cisla z ktorych je mozne zistit jeho index
-    size_t krajIndex = 8;
-    switch (std::stoi(indexStr)) {
-    case 10:
-        krajIndex = 0;
-        break;
-    case 21:
-        krajIndex = 1;
-        break;
-    case 22:
-        krajIndex = 2;
-        break;
-    case 23:
-        krajIndex = 3;
-        break;
-    case 31:
-        krajIndex = 4;
-        break;
-    case 32:
-        krajIndex = 5;
-        break;
-    case 41:
-        krajIndex = 6;
-        break;
-    case 42:
-        krajIndex = 7;
-        break;
+    int indexOblasti = std::stoi(identifikator.substr(zaciatok, 1)) - 1;
+    int indexKraja = std::stoi(identifikator.substr(zaciatok + 1, 1));
+
+    // specialny pripad pre tu oblast, kde je bratislavsky kraj, ta uz ma 0, ostatne idu od 1
+    if (indexOblasti != 0) {
+        indexKraja -= 1;
     }
-    return krajIndex;
+
+    // todo fix pre zahranicie
+
+    return *hierarchy.accessRoot()->sons_->access(indexOblasti)->data_->sons_->access(indexKraja)->data_;
 }

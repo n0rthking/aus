@@ -9,6 +9,7 @@
 
 using DataType = UzemnaJednotka;
 using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
+using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 
 class DruhaUroven
 {
@@ -21,6 +22,6 @@ public:
 	void NacitajOkresy();
 	void NacitajObce();
 private:
-	size_t DekodujIndexKraja(std::string indexStr);
+	BlockResultType& vratKraj(std::string identifikator, size_t zaciatok);
 };
 
