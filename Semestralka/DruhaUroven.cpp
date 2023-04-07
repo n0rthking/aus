@@ -32,7 +32,7 @@ void DruhaUroven::NacitajKraje()
             oblastZahranicie.data_.level = 1;
 
             auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
-            krajZahranicie.data_.nastavAtributy(uj);
+            krajZahranicie.data_ = uj;
             krajZahranicie.data_.level = 2;
             continue;
         }
@@ -53,7 +53,7 @@ void DruhaUroven::NacitajKraje()
         }
 
         auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti)->data_, indexKraja);
-        aktualnySyn.data_.nastavAtributy(uj);
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_.level = 2;
     }
 
@@ -73,7 +73,7 @@ void DruhaUroven::NacitajOkresy()
         if (uj.note.length() == 0) {
             auto& aktualnySynZahranicie = hierarchy.emplaceSon(vratZahranicieKraj(), zahranicieCounter);
 
-            aktualnySynZahranicie.data_.nastavAtributy(uj);
+            aktualnySynZahranicie.data_ = uj;
             aktualnySynZahranicie.data_.level = 3;
             ++zahranicieCounter;
             continue;
@@ -84,7 +84,7 @@ void DruhaUroven::NacitajOkresy()
         auto& aktualnyKraj = vratKraj(uj.code, 3);
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyKraj, indexOkresu);
 
-        aktualnySyn.data_.nastavAtributy(uj);
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_.level = 3;
     }
 
@@ -102,14 +102,14 @@ void DruhaUroven::NacitajObce()
         if (uj.code.find("ZZZZZ") != std::string::npos) {
             auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
-            aktualnySynZahranicia.data_.nastavAtributy(uj);
+            aktualnySynZahranicia.data_ = uj;
             aktualnySynZahranicia.data_.level = 4;
             continue;
         }
         else if (uj.code.find("ZZZZ") != std::string::npos) {
             auto& zahranicieMaloZ = *vratZahranicieKraj().sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
-            aktualnySynZahranicia.data_.nastavAtributy(uj);
+            aktualnySynZahranicia.data_ = uj;
             aktualnySynZahranicia.data_.level = 4;
             continue;
         }
@@ -120,7 +120,7 @@ void DruhaUroven::NacitajObce()
         int poradieObce = aktualnyOkres.sons_->size() - 1;
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, (poradieObce <= 0) ? 0 : poradieObce);
 
-        aktualnySyn.data_.nastavAtributy(uj);
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_.level = 4;
     }
 

@@ -34,14 +34,17 @@ public:
         return true;
     }
 
-    void nastavAtributy(const UzemnaJednotka& other) {
-        this->sortNumber = other.sortNumber;
-        this->code = other.code;
-        this->officialTitle = other.officialTitle;
-        this->mediumTitle = other.mediumTitle;
-        this->shortTitle = other.shortTitle;
-        this->note = other.note;
-        this->level = other.level;
+    UzemnaJednotka operator=(const UzemnaJednotka& other) {
+        if (this != &other) {
+            this->sortNumber = other.sortNumber;
+            this->code = other.code;
+            this->officialTitle = other.officialTitle;
+            this->mediumTitle = other.mediumTitle;
+            this->shortTitle = other.shortTitle;
+            this->note = other.note;
+            this->level = other.level;
+        }
+        return *this;
     }
 
     std::string toStr() const {
