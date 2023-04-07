@@ -11,6 +11,9 @@ using DataType = UzemnaJednotka;
 using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
 using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 
+const int OBLAST_ZAHRANICIE = 4;
+const int KRAJ_ZAHRANICIE = 0;
+
 class DruhaUroven
 {
 private:
@@ -23,5 +26,6 @@ public:
 	void NacitajObce();
 private:
 	BlockResultType& vratKraj(std::string identifikator, size_t zaciatok);
+	BlockResultType& vratZahranicieKraj();
 };
 

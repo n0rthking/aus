@@ -26,7 +26,14 @@ void DruhaUroven::NacitajKraje()
     while (citacKraje.citajRiadok()) {
         UzemnaJednotka uj = citacKraje.vytvorUJ();
 
-        if (uj.note.substr(8, 2) == "**") {
+        if (uj.note.substr(8, 1) == "*") {
+            auto& oblastZahranicie = hierarchy.emplaceSon(*hierarchy.accessRoot(), OBLAST_ZAHRANICIE);
+            oblastZahranicie.data_.officialTitle = "Oblast";
+            oblastZahranicie.data_.level = 1;
+
+            auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
+            krajZahranicie.data_.nastavAtributy(uj);
+            krajZahranicie.data_.level = 2;
             continue;
         }
 
@@ -64,12 +71,10 @@ void DruhaUroven::NacitajOkresy()
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
         if (uj.note.length() == 0) {
-            continue;
-            auto& zahranicieKraj = *hierarchy.accessRoot()->sons_->access(8)->data_;
-            auto& aktualnySynZahranicie = hierarchy.emplaceSon(zahranicieKraj, zahranicieCounter);
+            auto& aktualnySynZahranicie = hierarchy.emplaceSon(vratZahranicieKraj(), zahranicieCounter);
 
             aktualnySynZahranicie.data_.nastavAtributy(uj);
-            aktualnySynZahranicie.data_.level = 2;
+            aktualnySynZahranicie.data_.level = 3;
             ++zahranicieCounter;
             continue;
         }
@@ -95,19 +100,17 @@ void DruhaUroven::NacitajObce()
         UzemnaJednotka uj = citacObce.vytvorUJ();
 
         if (uj.code.find("ZZZZZ") != std::string::npos) {
-            continue;
-            auto& zahranicieVelaZ = *hierarchy.accessRoot()->sons_->access(8)->data_->sons_->access(1)->data_;
+            auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
             aktualnySynZahranicia.data_.nastavAtributy(uj);
-            aktualnySynZahranicia.data_.level = 3;
+            aktualnySynZahranicia.data_.level = 4;
             continue;
         }
         else if (uj.code.find("ZZZZ") != std::string::npos) {
-            continue;
-            auto& zahranicieMaloZ = *hierarchy.accessRoot()->sons_->access(8)->data_->sons_->access(0)->data_;
+            auto& zahranicieMaloZ = *vratZahranicieKraj().sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
             aktualnySynZahranicia.data_.nastavAtributy(uj);
-            aktualnySynZahranicia.data_.level = 3;
+            aktualnySynZahranicia.data_.level = 4;
             continue;
         }
 
@@ -134,7 +137,10 @@ BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciato
         indexKraja -= 1;
     }
 
-    // todo fix pre zahranicie
-
     return *hierarchy.accessRoot()->sons_->access(indexOblasti)->data_->sons_->access(indexKraja)->data_;
+}
+
+BlockResultType& DruhaUroven::vratZahranicieKraj()
+{
+    return *hierarchy.accessRoot()->sons_->access(OBLAST_ZAHRANICIE)->data_->sons_->access(KRAJ_ZAHRANICIE)->data_;
 }
