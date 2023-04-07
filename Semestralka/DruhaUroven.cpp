@@ -25,16 +25,20 @@ void DruhaUroven::NacitajKraje()
 
     while (citacKraje.citajRiadok()) {
         UzemnaJednotka uj = citacKraje.vytvorUJ();
+
         if (uj.note.substr(8, 2) == "**") {
             continue;
         }
+
         int indexOblasti = std::stoi(uj.note.substr(8, 1)) - 1;
         int indexKraja = std::stoi(uj.note.substr(9, 1));
 
+        // uprava indexov pre vsetky okrem toho kde je bratislavsky kraj
         if (indexOblasti != 0) {
             indexKraja -= 1;
         }
 
+        // pre prvy kraj z danej oblasti sa najprv vytvori oblast
         if (indexKraja == 0) {
             auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti);
             oblast.data_.officialTitle = "Oblast";
@@ -70,8 +74,6 @@ void DruhaUroven::NacitajOkresy()
             continue;
         }
 
-        // index kraja je prvy znak v note
-        int indexKraja = std::stoi(uj.note.substr(0, 1)) - 1;
         // poradie okresu v ramci jeho kraja su posledne 2 znaky v note
         int indexOkresu = std::stoi(uj.note.substr(1, 2)) - 1;
         auto& aktualnyKraj = vratKraj(uj.code, 3);
@@ -111,7 +113,6 @@ void DruhaUroven::NacitajObce()
 
         // index okresu je posledne cislo z trojcislia zacinajuce za retazcom SK0, pozor v hexa sustave
         int indexOkresu = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
-        // index kraja ziskame dekodovanim prvych 2 cisiel z trojcislia
         auto& aktualnyOkres = *vratKraj(uj.code, 3).sons_->access(indexOkresu)->data_;
         int poradieObce = aktualnyOkres.sons_->size() - 1;
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, (poradieObce <= 0) ? 0 : poradieObce);
