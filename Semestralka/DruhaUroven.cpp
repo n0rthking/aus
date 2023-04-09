@@ -20,11 +20,11 @@ void DruhaUroven::VytvorHierarchiu()
 
 void DruhaUroven::NacitajKraje()
 {
-    Citac citacKraje("data/kraje.csv");
+    Citac<Kraj> citacKraje("data/kraje.csv");
     citacKraje.preskocPrvyRiadok();
 
     while (citacKraje.citajRiadok()) {
-        UzemnaJednotka uj = citacKraje.vytvorUJ();
+        Kraj uj = citacKraje.vytvorUJ();
 
         if (uj.note.substr(8, 1) == "*") {
             auto& oblastZahranicie = hierarchy.emplaceSon(*hierarchy.accessRoot(), OBLAST_ZAHRANICIE);
@@ -62,12 +62,12 @@ void DruhaUroven::NacitajKraje()
 
 void DruhaUroven::NacitajOkresy()
 {
-    Citac citacOkresy("data/okresy.csv");
+    Citac<Okres> citacOkresy("data/okresy.csv");
     citacOkresy.preskocPrvyRiadok();
 
     int zahranicieCounter = 0;
     while (citacOkresy.citajRiadok()) {
-        UzemnaJednotka uj = citacOkresy.vytvorUJ();
+        Okres uj = citacOkresy.vytvorUJ();
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
         if (uj.note.length() == 0) {
@@ -93,11 +93,11 @@ void DruhaUroven::NacitajOkresy()
 
 void DruhaUroven::NacitajObce()
 {
-    Citac citacObce("data/obce.csv");
+    Citac<Obec> citacObce("data/obce.csv");
     citacObce.preskocPrvyRiadok();
 
     while (citacObce.citajRiadok()) {
-        UzemnaJednotka uj = citacObce.vytvorUJ();
+        Obec uj = citacObce.vytvorUJ();
 
         if (uj.code.find("ZZZZZ") != std::string::npos) {
             auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;

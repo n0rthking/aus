@@ -5,6 +5,9 @@
 #include <libds/amt/explicit_hierarchy.h>
 #include "Algorithm.h"
 #include "UzemnaJednotka.h"
+#include "Kraj.h"
+#include "Okres.h"
+#include "Obec.h"
 #include "Citac.h"
 
 using DataType = UzemnaJednotka;

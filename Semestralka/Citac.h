@@ -4,7 +4,11 @@
 #include <fstream>
 #include <sstream>
 #include "UzemnaJednotka.h"
+#include "Kraj.h"
+#include "Okres.h"
+#include "Obec.h"
 
+template<typename DataType>
 class Citac
 {
 private:
@@ -15,10 +19,52 @@ public:
 		suborStream.open(nazovSuboru);
 	}
 
-	bool skontrolujSubor();
-	void preskocPrvyRiadok();
-	bool citajRiadok();
-	UzemnaJednotka vytvorUJ();
-	void zatvorSubor();
+	bool skontrolujSubor()
+	{
+		return suborStream.is_open();
+	}
+
+	void preskocPrvyRiadok()
+	{
+		std::string obsah;
+		std::getline(suborStream, obsah);
+	}
+
+	bool citajRiadok()
+	{
+		return !std::getline(suborStream, aktualnyRiadok).fail();
+	}
+
+	DataType vytvorUJ()
+	{
+		std::string hodnota;
+		std::stringstream strstrm(aktualnyRiadok);
+		DataType uj;
+
+		std::getline(strstrm, hodnota, ';');
+		uj.sortNumber = std::stoi(hodnota);
+
+		std::getline(strstrm, hodnota, ';');
+		uj.code = hodnota;
+
+		std::getline(strstrm, hodnota, ';');
+		uj.officialTitle = hodnota;
+
+		std::getline(strstrm, hodnota, ';');
+		uj.mediumTitle = hodnota;
+
+		std::getline(strstrm, hodnota, ';');
+		uj.shortTitle = hodnota;
+
+		std::getline(strstrm, hodnota, ';');
+		uj.note = hodnota;
+
+		return uj;
+	}
+
+	void zatvorSubor()
+	{
+		suborStream.close();
+	}
 };
 

@@ -44,7 +44,7 @@ int PrvaUroven::zistiParametre()
 
 bool PrvaUroven::nacitajVstup()
 {
-    Citac citac("data/" + inputFilename);
+    Citac<UzemnaJednotka> citac("data/" + inputFilename);
 
     if (!citac.skontrolujSubor()) {
         std::cout << "Chybne zadany subor" << std::endl;
