@@ -129,7 +129,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Citac.cpp" />
     <ClCompile Include="DruhaUroven.cpp" />
     <ClCompile Include="PrvaUroven.cpp" />
     <ClCompile Include="Main.cpp" />

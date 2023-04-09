@@ -21,9 +21,6 @@
     <ClCompile Include="PrvaUroven.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Citac.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DruhaUroven.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
