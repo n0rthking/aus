@@ -2,6 +2,10 @@
 
 #include <string>
 
+const int TYP_KRAJ = 1;
+const int TYP_OKRES = 2;
+const int TYP_OBEC = 3;
+
 class UzemnaJednotka {
 public:
     int sortNumber;
@@ -11,6 +15,7 @@ public:
     std::string shortTitle;
     std::string note;
     int level;
+    int typ;
 
     UzemnaJednotka() {
         sortNumber = 0;
@@ -20,6 +25,7 @@ public:
         shortTitle = "";
         note = "";
         level = 0;
+        typ = 0;
     }
 
     bool operator==(const UzemnaJednotka& other) const {
@@ -43,6 +49,7 @@ public:
             this->shortTitle = other.shortTitle;
             this->note = other.note;
             this->level = other.level;
+            this->typ = other.typ;
         }
         return *this;
     }
@@ -52,6 +59,6 @@ public:
         if (level != 0) {
             levelStr = std::string(level, '\t');
         }
-        return levelStr + std::to_string(this->sortNumber) + " " + this->code + " " + this->officialTitle + " " + this->note;
+        return levelStr + this->officialTitle + " " + std::to_string(this->typ);
     }
 };

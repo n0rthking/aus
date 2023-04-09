@@ -4,5 +4,7 @@
 
 class Okres : public UzemnaJednotka {
 public:
-	Okres() : UzemnaJednotka() {}
+	Okres() : UzemnaJednotka() {
+		this->typ = TYP_OKRES;
+	}
 };
