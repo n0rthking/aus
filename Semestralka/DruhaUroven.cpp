@@ -44,8 +44,6 @@ void DruhaUroven::VytvorHierarchiu()
 void DruhaUroven::RozhranieIteratora()
 {
     auto iteratorHierarchie = hierarchy.beginPre();
-
-    //std::cout << "zadaj pohyb [u]p alebo [n]ext:\n";
     this->VypisAktualnuPoziciu(*iteratorHierarchie);
 
     while (true) {
@@ -213,7 +211,6 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
     }
     else if (vstup.find("s") != std::string::npos) {
         size_t poradie;
-        std::cout << "Zadaj poradie syna: ";
         std::cin >> poradie;
         it += poradie;
     }
@@ -222,5 +219,6 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
         return true;
     }
 
+    std::cout << "\n";
     return false;
 }
