@@ -489,7 +489,6 @@ namespace ds::amt {
 	template<typename BlockType>
 	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator+=(size_t n)
 	{
-		// TODO iterator += also check mem leak
 		auto newSon = this->hierarchy_->accessSon(*this->currentPosition_->currentNode_, n);
 		if (newSon != nullptr) {
 			this->savePosition(newSon);
@@ -504,13 +503,14 @@ namespace ds::amt {
 	template<typename BlockType>
 	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator--()
 	{
-		// TODO check mem leak
+		auto oldPosition = this->currentPosition_;
 		auto newPosition = this->currentPosition_->previousPosition_;
 		if (newPosition != nullptr) {
 			this->currentPosition_ = newPosition;
 			this->currentPosition_->visitedSonCount_ = 0;
 			this->currentPosition_->currentSonOrder_ = INVALID_INDEX;
 			this->currentPosition_->currentNodeProcessed_ = false;
+			delete oldPosition;
 		}
 		return *this;
 	}
