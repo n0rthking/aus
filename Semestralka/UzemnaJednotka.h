@@ -6,6 +6,8 @@ const int TYP_KRAJ = 1;
 const int TYP_OKRES = 2;
 const int TYP_OBEC = 3;
 
+const int TO_STRING_NO_INDEX = -1;
+
 class UzemnaJednotka {
 public:
     int sortNumber;
@@ -28,7 +30,7 @@ public:
         typ = 0;
     }
 
-    bool operator==(const UzemnaJednotka& other) const {
+    bool operator==(const UzemnaJednotka& other) {
         if (this->sortNumber != other.sortNumber
             || this->code != other.code
             || this->officialTitle != other.officialTitle
@@ -54,11 +56,36 @@ public:
         return *this;
     }
 
-    std::string toStr() const {
-        std::string levelStr = "";
-        if (level != 0) {
-            levelStr = std::string(level, '\t');
+    std::string toString(bool odsadenie = true, int index = TO_STRING_NO_INDEX) {
+        std::string vystup = this->vratOdsadenie(odsadenie);
+        if (index != TO_STRING_NO_INDEX) {
+            return vystup + std::to_string(index) + ": " + this->officialTitle;
         }
-        return levelStr + this->officialTitle + " " + std::to_string(this->typ);
+        return vystup + this->officialTitle;
+    }
+private:
+    std::string vratOdsadenie(bool odsadenie) {
+        std::string odsadenieStr = "";
+
+        if (!odsadenie) {
+            return odsadenieStr;
+        }
+        
+        switch (level) {
+        case 1:
+            odsadenieStr = "  ";
+            break;
+        case 2:
+            odsadenieStr = "    ";
+            break;
+        case 3:
+            odsadenieStr = "      ";
+            break;
+        case 4:
+            odsadenieStr = "        ";
+            break;
+        }
+
+        return odsadenieStr;
     }
 };

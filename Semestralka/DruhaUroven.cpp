@@ -5,10 +5,33 @@ DruhaUroven::DruhaUroven()
     hierarchy.emplaceRoot().data_.officialTitle = "Slovensko";
 
     VytvorHierarchiu();
+    RozhranieIteratora();
 
-    for (auto it = hierarchy.beginPre(); it != hierarchy.endPre(); ++it) {
-        std::cout << (*it).toStr() << std::endl;
-    }
+    /*for (auto it = hierarchy.beginPre(); it != hierarchy.endPre(); ++it) {
+        std::cout << (*it).toString() << std::endl;
+    }*/
+
+    /*ds::amt::ImplicitSequence<DataType> resultSeq;
+    Algorithm<DataType, ds::amt::ImplicitSequence<DataType>> algorithm;
+    std::string subString = "l";
+
+    auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, hierarchy.accessRoot()->sons_->access(2)->data_);
+    auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
+
+    algorithm.findElementsWithProperty(
+        itBegin,
+        itEnd,
+        [subString](auto uj) {
+            return uj.typ == TYP_KRAJ || uj.typ == TYP_OBEC;
+        },
+        resultSeq,
+            [](auto& result, auto data) {
+            result.insertLast().data_ = data;
+        });
+
+    for (const auto& element : resultSeq) {
+        std::cout << element.toStr() << std::endl;
+    }*/
 }
 
 void DruhaUroven::VytvorHierarchiu()
@@ -16,6 +39,24 @@ void DruhaUroven::VytvorHierarchiu()
     NacitajKraje();
     NacitajOkresy();
     NacitajObce();
+}
+
+void DruhaUroven::RozhranieIteratora()
+{
+    auto iteratorHierarchie = hierarchy.beginPre();
+
+    //std::cout << "zadaj pohyb [u]p alebo [n]ext:\n";
+    this->VypisAktualnuPoziciu(*iteratorHierarchie);
+
+    while (true) {
+        this->VypisSynovNaAktualnejPozicii(iteratorHierarchie.allData().sons_);
+
+        if (this->VstupOdUzivatela(iteratorHierarchie)) {
+            break;
+        }
+
+        this->VypisAktualnuPoziciu(*iteratorHierarchie);
+    }
 }
 
 void DruhaUroven::NacitajKraje()
@@ -143,4 +184,43 @@ BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciato
 BlockResultType& DruhaUroven::vratZahranicieKraj()
 {
     return *hierarchy.accessRoot()->sons_->access(OBLAST_ZAHRANICIE)->data_->sons_->access(KRAJ_ZAHRANICIE)->data_;
+}
+
+void DruhaUroven::VypisAktualnuPoziciu(DataType uj)
+{
+    std::cout << "Aktualna pozicia: " + uj.toString(false) << std::endl;
+}
+
+void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia)
+{
+    size_t indexSyna = 0;
+    std::cout << "Synovia aktualnej uzemnej jednotky:\n";
+
+    for (auto it = synovia->begin(); it != synovia->end(); ++it) {
+        std::cout << (*it)->data_.toString(true, indexSyna) << std::endl;
+        ++indexSyna;
+    }
+}
+
+bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it)
+{
+    std::string vstup;
+    std::cout << "Zadaj moznost [u]p, [s]on (index), [q]uit: ";
+    std::cin >> vstup;
+
+    if (vstup.find("u") != std::string::npos) {
+        --it;
+    }
+    else if (vstup.find("s") != std::string::npos) {
+        size_t poradie;
+        std::cout << "Zadaj poradie syna: ";
+        std::cin >> poradie;
+        it += poradie;
+    }
+    else {
+        std::cout << "Koniec\n";
+        return true;
+    }
+
+    return false;
 }

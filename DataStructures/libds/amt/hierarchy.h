@@ -86,6 +86,7 @@ namespace ds::amt {
 			bool operator==(const DepthFirstIterator& other) const;
 			bool operator!=(const DepthFirstIterator& other) const;
 			DataType& operator*();
+			BlockType& allData();
 
 		protected:
 			void savePosition(BlockType* currentNode);
@@ -104,6 +105,8 @@ namespace ds::amt {
 			PreOrderHierarchyIterator(Hierarchy<BlockType>* hierarchy, BlockType* node);
 			PreOrderHierarchyIterator(const PreOrderHierarchyIterator& other);
 			PreOrderHierarchyIterator& operator++();
+			PreOrderHierarchyIterator& operator--();
+			PreOrderHierarchyIterator& operator+=(size_t n);
 		};
 
 		//----------
@@ -409,6 +412,13 @@ namespace ds::amt {
 	}
 
 	template<typename BlockType>
+	auto Hierarchy<BlockType>::DepthFirstIterator::allData() -> BlockType&
+	{
+		currentPosition_->currentNodeProcessed_ = true;
+		return *currentPosition_->currentNode_;
+	}
+
+	template<typename BlockType>
     void Hierarchy<BlockType>::DepthFirstIterator::savePosition(BlockType* currentNode)
 	{
 		currentPosition_ = new DepthFirstIteratorPosition(currentNode, currentPosition_);
@@ -472,6 +482,35 @@ namespace ds::amt {
 			if (this->currentPosition_ != nullptr) {
 				++(*this);
 			}
+		}
+		return *this;
+	}
+
+	template<typename BlockType>
+	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator+=(size_t n)
+	{
+		// TODO iterator += also check mem leak
+		auto newSon = this->hierarchy_->accessSon(*this->currentPosition_->currentNode_, n);
+		if (newSon != nullptr) {
+			this->savePosition(newSon);
+			this->currentPosition_->previousPosition_->currentSonOrder_ = n;
+			this->currentPosition_->previousPosition_->currentSon_ = newSon;
+			this->currentPosition_->previousPosition_->visitedSonCount_ = n + 1;
+			this->currentPosition_->previousPosition_->currentNodeProcessed_ = true;
+		}
+		return *this;
+	}
+
+	template<typename BlockType>
+	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator--()
+	{
+		// TODO check mem leak
+		auto newPosition = this->currentPosition_->previousPosition_;
+		if (newPosition != nullptr) {
+			this->currentPosition_ = newPosition;
+			this->currentPosition_->visitedSonCount_ = 0;
+			this->currentPosition_->currentSonOrder_ = INVALID_INDEX;
+			this->currentPosition_->currentNodeProcessed_ = false;
 		}
 		return *this;
 	}
