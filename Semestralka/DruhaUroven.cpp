@@ -186,7 +186,7 @@ BlockResultType& DruhaUroven::vratZahranicieKraj()
 
 void DruhaUroven::VypisAktualnuPoziciu(DataType uj)
 {
-    std::cout << "Aktualna pozicia: " + uj.toString(false) << std::endl;
+    std::cout << "Aktualna pozicia: \x1B[32m" + uj.toString(false) << "\033[0m" << std::endl;
 }
 
 void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia)

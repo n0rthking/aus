@@ -59,7 +59,7 @@ public:
     std::string toString(bool odsadenie = true, int index = TO_STRING_NO_INDEX) {
         std::string vystup = this->vratOdsadenie(odsadenie);
         if (index != TO_STRING_NO_INDEX) {
-            return vystup + std::to_string(index) + ": " + this->officialTitle;
+            return vystup + std::to_string(index) + ": \x1B[36m" + this->officialTitle + "\033[0m";
         }
         return vystup + this->officialTitle;
     }
