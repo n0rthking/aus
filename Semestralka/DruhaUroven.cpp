@@ -193,8 +193,6 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
         it += poradie;
     }
     else if (vstup.find("f") != std::string::npos) {
-        std::string predikat;
-        std::cin >> predikat;
         this->filtrujHierarchiu(it);
     }
     else {
@@ -211,7 +209,30 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
     using ResultSequence = ds::amt::ImplicitSequence<DataType>;
     ResultSequence vystupnaSekvencia;
     Algorithm<DataType, ResultSequence> algorithm;
-    std::string subString = "l";
+    std::string subString;
+    std::cin >> subString;
+
+    std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
+    std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj.officialTitle.find(subString) == 0; };
+    std::function<bool(DataType)> lambdaHasType = [](const DataType& uj) { return uj.typ == TYP_OKRES; };
+    std::function<bool(DataType)> aktualnaLambda;
+
+    std::string predikat;
+    std::cin >> predikat;
+
+    if (predikat.find("c") != std::string::npos) {
+        aktualnaLambda = lambdaContains;
+    }
+    else if (predikat.find("s") != std::string::npos) {
+        aktualnaLambda = lambdaStartsWith;
+    }
+    else if (predikat.find("h") != std::string::npos) {
+        aktualnaLambda = lambdaHasType;
+    }
+    else {
+        std::cout << "Nespravna moznost\n";
+        return;
+    }
 
     auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, &it.allData());
     auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
@@ -219,9 +240,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
     algorithm.findElementsWithProperty(
         itBegin,
         itEnd,
-        [subString](auto uj) {
-            return uj.typ == TYP_KRAJ;
-        },
+        aktualnaLambda,
         vystupnaSekvencia,
             [](auto& result, auto data) {
             result.insertLast().data_ = data;
