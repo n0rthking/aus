@@ -6,10 +6,6 @@ DruhaUroven::DruhaUroven()
 
     VytvorHierarchiu();
     RozhranieIteratora();
-
-    /*for (auto it = hierarchy.beginPre(); it != hierarchy.endPre(); ++it) {
-        std::cout << (*it).toString() << std::endl;
-    }*/
 }
 
 void DruhaUroven::VytvorHierarchiu()
@@ -181,7 +177,7 @@ void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* sy
 bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it)
 {
     std::string vstup;
-    std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter, [q]uit: ";
+    std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit: ";
     std::cin >> vstup;
 
     if (vstup.find("u") != std::string::npos) {
@@ -247,6 +243,6 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
         });
 
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
-        std::cout << (*itSeq).toString() << std::endl;
+        std::cout << "\x1B[33m" << (*itSeq).toString() << "\033[0m" << std::endl;
     }
 }
