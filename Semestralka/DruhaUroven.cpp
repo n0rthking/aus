@@ -259,4 +259,6 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
         std::cout << "\x1B[33m" << (*itSeq).toString() << "\033[0m" << std::endl;
     }
+
+    std::cout << "Pocet vysledkov: " << vystupnaSekvencia.size() << "\n";
 }
