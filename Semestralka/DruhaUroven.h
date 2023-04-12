@@ -35,5 +35,6 @@ private:
 	void VypisAktualnuPoziciu(DataType uj);
 	void VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia);
 	bool VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it);
+	void filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator it);
 };
 

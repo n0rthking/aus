@@ -10,28 +10,6 @@ DruhaUroven::DruhaUroven()
     /*for (auto it = hierarchy.beginPre(); it != hierarchy.endPre(); ++it) {
         std::cout << (*it).toString() << std::endl;
     }*/
-
-    /*ds::amt::ImplicitSequence<DataType> resultSeq;
-    Algorithm<DataType, ds::amt::ImplicitSequence<DataType>> algorithm;
-    std::string subString = "l";
-
-    auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, hierarchy.accessRoot()->sons_->access(2)->data_);
-    auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
-
-    algorithm.findElementsWithProperty(
-        itBegin,
-        itEnd,
-        [subString](auto uj) {
-            return uj.typ == TYP_KRAJ || uj.typ == TYP_OBEC;
-        },
-        resultSeq,
-            [](auto& result, auto data) {
-            result.insertLast().data_ = data;
-        });
-
-    for (const auto& element : resultSeq) {
-        std::cout << element.toStr() << std::endl;
-    }*/
 }
 
 void DruhaUroven::VytvorHierarchiu()
@@ -203,7 +181,7 @@ void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* sy
 bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it)
 {
     std::string vstup;
-    std::cout << "Zadaj moznost [u]p, [s]on (index), [q]uit: ";
+    std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter, [q]uit: ";
     std::cin >> vstup;
 
     if (vstup.find("u") != std::string::npos) {
@@ -214,6 +192,11 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
         std::cin >> poradie;
         it += poradie;
     }
+    else if (vstup.find("f") != std::string::npos) {
+        std::string predikat;
+        std::cin >> predikat;
+        this->filtrujHierarchiu(it);
+    }
     else {
         std::cout << "Koniec\n";
         return true;
@@ -221,4 +204,30 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
 
     std::cout << "\n";
     return false;
+}
+
+void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator it)
+{
+    using ResultSequence = ds::amt::ImplicitSequence<DataType>;
+    ResultSequence vystupnaSekvencia;
+    Algorithm<DataType, ResultSequence> algorithm;
+    std::string subString = "l";
+
+    auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, &it.allData());
+    auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
+
+    algorithm.findElementsWithProperty(
+        itBegin,
+        itEnd,
+        [subString](auto uj) {
+            return uj.typ == TYP_KRAJ;
+        },
+        vystupnaSekvencia,
+            [](auto& result, auto data) {
+            result.insertLast().data_ = data;
+        });
+
+    for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
+        std::cout << (*itSeq).toString() << std::endl;
+    }
 }
