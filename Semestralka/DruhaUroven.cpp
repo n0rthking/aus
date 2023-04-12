@@ -210,9 +210,21 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
     std::string subString;
     std::cin >> subString;
 
+    int typUj = -1;
+
+    if (subString.find("kraj") != std::string::npos) {
+        typUj = TYP_KRAJ;
+    }
+    else if (subString.find("okres") != std::string::npos) {
+        typUj = TYP_OKRES;
+    }
+    else if (subString.find("obec") != std::string::npos) {
+        typUj = TYP_OBEC;
+    }
+
     std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
     std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj.officialTitle.find(subString) == 0; };
-    std::function<bool(DataType)> lambdaHasType = [](const DataType& uj) { return uj.typ == TYP_OKRES; };
+    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj.typ == typUj; };
     std::function<bool(DataType)> aktualnaLambda;
 
     std::string predikat;
