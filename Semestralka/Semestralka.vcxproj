@@ -139,6 +139,7 @@
     <ClInclude Include="DruhaUroven.h" />
     <ClInclude Include="Kraj.h" />
     <ClInclude Include="Obec.h" />
+    <ClInclude Include="OblastNazov.h" />
     <ClInclude Include="Okres.h" />
     <ClInclude Include="PrvaUroven.h" />
     <ClInclude Include="UzemnaJednotka.h" />

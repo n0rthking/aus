@@ -36,12 +36,14 @@ void DruhaUroven::NacitajKraje()
     Citac<Kraj> citacKraje("data/kraje.csv");
     citacKraje.preskocPrvyRiadok();
 
+    OblastNazov oblastNazov;
+
     while (citacKraje.citajRiadok()) {
         Kraj uj = citacKraje.vytvorUJ();
 
         if (uj.note.substr(8, 1) == "*") {
             auto& oblastZahranicie = hierarchy.emplaceSon(*hierarchy.accessRoot(), OBLAST_ZAHRANICIE);
-            oblastZahranicie.data_.officialTitle = "Oblast";
+            oblastZahranicie.data_.officialTitle = oblastNazov.dajNazovOblasti();
             oblastZahranicie.data_.level = 1;
 
             auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
@@ -61,7 +63,7 @@ void DruhaUroven::NacitajKraje()
         // pre prvy kraj z danej oblasti sa najprv vytvori oblast
         if (indexKraja == 0) {
             auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti);
-            oblast.data_.officialTitle = "Oblast";
+            oblast.data_.officialTitle = oblastNazov.dajNazovOblasti();
             oblast.data_.level = 1;
         }
 

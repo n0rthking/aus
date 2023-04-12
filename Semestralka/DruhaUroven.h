@@ -5,6 +5,7 @@
 #include <libds/amt/explicit_hierarchy.h>
 #include <libds/amt/implicit_sequence.h>
 #include "Algorithm.h"
+#include "OblastNazov.h"
 #include "UzemnaJednotka.h"
 #include "Kraj.h"
 #include "Okres.h"
