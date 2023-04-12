@@ -194,7 +194,7 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
         this->filtrujHierarchiu(it);
     }
     else {
-        std::cout << "Koniec\n";
+        std::cout << "\x1B[31mKoniec\033[0m\n";
         return true;
     }
 
@@ -240,7 +240,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
         aktualnaLambda = lambdaHasType;
     }
     else {
-        std::cout << "Nespravna moznost\n";
+        std::cout << "\x1B[31mNespravna moznost\033[0m\n";
         return;
     }
 
