@@ -182,15 +182,15 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
     std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit: ";
     std::cin >> vstup;
 
-    if (vstup.find("u") != std::string::npos) {
+    if (vstup.find("u") == 0) {
         --it;
     }
-    else if (vstup.find("s") != std::string::npos) {
+    else if (vstup.find("s") == 0) {
         size_t poradie;
         std::cin >> poradie;
         it += poradie;
     }
-    else if (vstup.find("f") != std::string::npos) {
+    else if (vstup.find("f") == 0) {
         this->filtrujHierarchiu(it);
     }
     else {
@@ -212,32 +212,36 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
 
     int typUj = -1;
 
-    if (subString.find("kraj") != std::string::npos) {
+    if (subString.find("kraj") == 0) {
         typUj = TYP_KRAJ;
     }
-    else if (subString.find("okres") != std::string::npos) {
+    else if (subString.find("okres") == 0) {
         typUj = TYP_OKRES;
     }
-    else if (subString.find("obec") != std::string::npos) {
+    else if (subString.find("obec") == 0) {
         typUj = TYP_OBEC;
     }
 
     std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
     std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj.officialTitle.find(subString) == 0; };
     std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj.typ == typUj; };
+    std::function<bool(DataType)> lambdaVsetko = [](const DataType& uj) { return true; };
     std::function<bool(DataType)> aktualnaLambda;
 
     std::string predikat;
     std::cin >> predikat;
 
-    if (predikat.find("c") != std::string::npos) {
+    if (predikat.find("c") == 0) {
         aktualnaLambda = lambdaContains;
     }
-    else if (predikat.find("s") != std::string::npos) {
+    else if (predikat.find("s") == 0) {
         aktualnaLambda = lambdaStartsWith;
     }
-    else if (predikat.find("h") != std::string::npos) {
+    else if (predikat.find("h") == 0) {
         aktualnaLambda = lambdaHasType;
+    }
+    else if (predikat.find("a") == 0) {
+        aktualnaLambda = lambdaVsetko;
     }
     else {
         std::cout << "\x1B[31mNespravna moznost\033[0m\n";
