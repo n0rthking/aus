@@ -114,14 +114,14 @@ void DruhaUroven::NacitajObce()
     while (citacObce.citajRiadok()) {
         Obec uj = citacObce.vytvorUJ();
 
-        if (uj.code.find("ZZZZZ") != std::string::npos) {
+        if (uj.code == "SKZZZZZZZZZZ") {
             auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
             aktualnySynZahranicia.data_ = uj;
             aktualnySynZahranicia.data_.level = 4;
             continue;
         }
-        else if (uj.code.find("ZZZZ") != std::string::npos) {
+        else if (uj.code == "SKZZZZ") {
             auto& zahranicieMaloZ = *vratZahranicieKraj().sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
             aktualnySynZahranicia.data_ = uj;
