@@ -56,7 +56,11 @@ public:
         return *this;
     }
 
-    std::string toString(bool odsadenie = true, int index = TO_STRING_NO_INDEX) {
+    bool porovnajTyp(int zadanyTyp) const {
+        return this->typ == zadanyTyp;
+    }
+
+    std::string toString(bool odsadenie = true, int index = TO_STRING_NO_INDEX) const {
         std::string vystup = this->vratOdsadenie(odsadenie);
         if (index != TO_STRING_NO_INDEX) {
             return vystup + std::to_string(index) + ": \x1B[36m" + this->officialTitle + "\033[0m";
@@ -64,7 +68,7 @@ public:
         return vystup + this->officialTitle;
     }
 private:
-    std::string vratOdsadenie(bool odsadenie) {
+    std::string vratOdsadenie(bool odsadenie) const {
         std::string odsadenieStr = "";
 
         if (!odsadenie) {

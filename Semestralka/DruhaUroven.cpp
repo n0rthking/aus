@@ -223,7 +223,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
 
     std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
     std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj.officialTitle.find(subString) == 0; };
-    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj.typ == typUj; };
+    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj.porovnajTyp(typUj); };
     std::function<bool(DataType)> lambdaVsetko = [](const DataType& uj) { return true; };
     std::function<bool(DataType)> aktualnaLambda;
 
