@@ -132,8 +132,7 @@ void DruhaUroven::NacitajObce()
         // index okresu je posledne cislo z trojcislia zacinajuce za retazcom SK0, pozor v hexa sustave
         int indexOkresu = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
         auto& aktualnyOkres = *vratKraj(uj.code, 3).sons_->access(indexOkresu)->data_;
-        int poradieObce = aktualnyOkres.sons_->size() - 1;
-        auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, (poradieObce <= 0) ? 0 : poradieObce);
+        auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, aktualnyOkres.sons_->size());
 
         aktualnySyn.data_ = uj;
         aktualnySyn.data_.level = 4;
