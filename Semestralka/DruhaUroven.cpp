@@ -21,7 +21,7 @@ void DruhaUroven::RozhranieIteratora()
     this->VypisAktualnuPoziciu(*iteratorHierarchie);
 
     while (true) {
-        this->VypisSynovNaAktualnejPozicii(iteratorHierarchie.allData().sons_);
+        this->VypisSynovNaAktualnejPozicii(iteratorHierarchie.dajBlockType().sons_);
 
         if (this->VstupOdUzivatela(iteratorHierarchie)) {
             break;
@@ -247,7 +247,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
         return;
     }
 
-    auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, &it.allData());
+    auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, &it.dajBlockType());
     auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
 
     algorithm.findElementsWithProperty(

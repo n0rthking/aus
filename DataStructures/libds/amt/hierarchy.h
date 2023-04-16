@@ -86,7 +86,7 @@ namespace ds::amt {
 			bool operator==(const DepthFirstIterator& other) const;
 			bool operator!=(const DepthFirstIterator& other) const;
 			DataType& operator*();
-			BlockType& allData();
+			BlockType& dajBlockType();
 
 		protected:
 			void savePosition(BlockType* currentNode);
@@ -106,7 +106,7 @@ namespace ds::amt {
 			PreOrderHierarchyIterator(const PreOrderHierarchyIterator& other);
 			PreOrderHierarchyIterator& operator++();
 			PreOrderHierarchyIterator& operator--();
-			PreOrderHierarchyIterator& operator+=(size_t n);
+			PreOrderHierarchyIterator& operator+=(size_t indexSyna);
 		};
 
 		//----------
@@ -412,7 +412,7 @@ namespace ds::amt {
 	}
 
 	template<typename BlockType>
-	auto Hierarchy<BlockType>::DepthFirstIterator::allData() -> BlockType&
+	auto Hierarchy<BlockType>::DepthFirstIterator::dajBlockType() -> BlockType&
 	{
 		currentPosition_->currentNodeProcessed_ = true;
 		return *currentPosition_->currentNode_;
@@ -487,14 +487,14 @@ namespace ds::amt {
 	}
 
 	template<typename BlockType>
-	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator+=(size_t n)
+	typename Hierarchy<BlockType>::PreOrderHierarchyIterator& Hierarchy<BlockType>::PreOrderHierarchyIterator::operator+=(size_t indexSyna)
 	{
-		auto newSon = this->hierarchy_->accessSon(*this->currentPosition_->currentNode_, n);
+		auto newSon = this->hierarchy_->accessSon(*this->currentPosition_->currentNode_, indexSyna);
 		if (newSon != nullptr) {
 			this->savePosition(newSon);
-			this->currentPosition_->previousPosition_->currentSonOrder_ = n;
+			this->currentPosition_->previousPosition_->currentSonOrder_ = indexSyna;
 			this->currentPosition_->previousPosition_->currentSon_ = newSon;
-			this->currentPosition_->previousPosition_->visitedSonCount_ = n + 1;
+			this->currentPosition_->previousPosition_->visitedSonCount_ = indexSyna + 1;
 			this->currentPosition_->previousPosition_->currentNodeProcessed_ = true;
 		}
 		return *this;
