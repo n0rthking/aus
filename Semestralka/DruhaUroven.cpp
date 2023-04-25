@@ -2,7 +2,8 @@
 
 DruhaUroven::DruhaUroven()
 {
-    hierarchy.emplaceRoot().data_.officialTitle = "Slovensko";
+    hierarchy.emplaceRoot().data_ = new UzemnaJednotka();
+    hierarchy.accessRoot()->data_->officialTitle = "Slovensko";
 
     VytvorHierarchiu();
     RozhranieIteratora();
@@ -33,22 +34,21 @@ void DruhaUroven::RozhranieIteratora()
 
 void DruhaUroven::NacitajKraje()
 {
-    Citac<Kraj> citacKraje("data/kraje.csv");
-    citacKraje.preskocPrvyRiadok();
-
     OblastNazov oblastNazov;
 
-    while (citacKraje.citajRiadok()) {
-        Kraj uj = citacKraje.vytvorUJ();
+    for (auto itKraje = this->seqKraje_.begin(); itKraje != this->seqKraje_.end(); ++itKraje) {
+        Kraj& uj = *itKraje;
 
         if (uj.note.substr(8, 1) == "*") {
             auto& oblastZahranicie = hierarchy.emplaceSon(*hierarchy.accessRoot(), OBLAST_ZAHRANICIE);
-            oblastZahranicie.data_.officialTitle = oblastNazov.dajNazovOblasti();
-            oblastZahranicie.data_.level = 1;
+            oblastZahranicie.data_ = new UzemnaJednotka();
+            oblastZahranicie.data_->officialTitle = oblastNazov.dajNazovOblasti();
+            oblastZahranicie.data_->level = 1;
 
             auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
-            krajZahranicie.data_ = uj;
-            krajZahranicie.data_.level = 2;
+            krajZahranicie.data_ = new UzemnaJednotka();
+            krajZahranicie.data_ = &uj;
+            krajZahranicie.data_->level = 2;
             continue;
         }
 
@@ -63,33 +63,30 @@ void DruhaUroven::NacitajKraje()
         // pre prvy kraj z danej oblasti sa najprv vytvori oblast
         if (indexKraja == 0) {
             auto& oblast = hierarchy.emplaceSon(*hierarchy.accessRoot(), indexOblasti);
-            oblast.data_.officialTitle = oblastNazov.dajNazovOblasti();
-            oblast.data_.level = 1;
+            oblast.data_ = new UzemnaJednotka();
+            oblast.data_->officialTitle = oblastNazov.dajNazovOblasti();
+            oblast.data_->level = 1;
         }
 
         auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti)->data_, indexKraja);
-        aktualnySyn.data_ = uj;
-        aktualnySyn.data_.level = 2;
+        aktualnySyn.data_ = new UzemnaJednotka();
+        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_->level = 2;
     }
-
-    citacKraje.zatvorSubor();
 }
 
 void DruhaUroven::NacitajOkresy()
 {
-    Citac<Okres> citacOkresy("data/okresy.csv");
-    citacOkresy.preskocPrvyRiadok();
-
     int zahranicieCounter = 0;
-    while (citacOkresy.citajRiadok()) {
-        Okres uj = citacOkresy.vytvorUJ();
+    for (auto itOkresy = this->seqOkresy_.begin(); itOkresy != this->seqOkresy_.end(); ++itOkresy) {
+        Okres& uj = *itOkresy;
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
         if (uj.note.length() == 0) {
             auto& aktualnySynZahranicie = hierarchy.emplaceSon(vratZahranicieKraj(), zahranicieCounter);
 
-            aktualnySynZahranicie.data_ = uj;
-            aktualnySynZahranicie.data_.level = 3;
+            aktualnySynZahranicie.data_ = &uj;
+            aktualnySynZahranicie.data_->level = 3;
             ++zahranicieCounter;
             continue;
         }
@@ -99,33 +96,28 @@ void DruhaUroven::NacitajOkresy()
         auto& aktualnyKraj = vratKraj(uj.code, 3);
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyKraj, indexOkresu);
 
-        aktualnySyn.data_ = uj;
-        aktualnySyn.data_.level = 3;
+        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_->level = 3;
     }
-
-    citacOkresy.zatvorSubor();
 }
 
 void DruhaUroven::NacitajObce()
 {
-    Citac<Obec> citacObce("data/obce.csv");
-    citacObce.preskocPrvyRiadok();
-
-    while (citacObce.citajRiadok()) {
-        Obec uj = citacObce.vytvorUJ();
+    for (auto itObce = this->seqObce_.begin(); itObce != this->seqObce_.end(); ++itObce) {
+        Obec& uj = *itObce;
 
         if (uj.code == "SKZZZZZZZZZZ") {
             auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
-            aktualnySynZahranicia.data_ = uj;
-            aktualnySynZahranicia.data_.level = 4;
+            aktualnySynZahranicia.data_ = &uj;
+            aktualnySynZahranicia.data_->level = 4;
             continue;
         }
         else if (uj.code == "SKZZZZ") {
             auto& zahranicieMaloZ = *vratZahranicieKraj().sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
-            aktualnySynZahranicia.data_ = uj;
-            aktualnySynZahranicia.data_.level = 4;
+            aktualnySynZahranicia.data_ = &uj;
+            aktualnySynZahranicia.data_->level = 4;
             continue;
         }
 
@@ -134,11 +126,9 @@ void DruhaUroven::NacitajObce()
         auto& aktualnyOkres = *vratKraj(uj.code, 3).sons_->access(indexOkresu)->data_;
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, aktualnyOkres.sons_->size());
 
-        aktualnySyn.data_ = uj;
-        aktualnySyn.data_.level = 4;
+        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_->level = 4;
     }
-
-    citacObce.zatvorSubor();
 }
 
 BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
@@ -161,7 +151,7 @@ BlockResultType& DruhaUroven::vratZahranicieKraj()
 
 void DruhaUroven::VypisAktualnuPoziciu(DataType uj)
 {
-    std::cout << "Aktualna pozicia: \x1B[32m" + uj.toString(false) << "\033[0m" << std::endl;
+    std::cout << "Aktualna pozicia: \x1B[32m" + uj->toString(false) << "\033[0m" << std::endl;
 }
 
 void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia)
@@ -170,7 +160,7 @@ void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* sy
     std::cout << "Synovia aktualnej uzemnej jednotky:\n";
 
     for (auto it = synovia->begin(); it != synovia->end(); ++it) {
-        std::cout << (*it)->data_.toString(true, indexSyna) << std::endl;
+        std::cout << (*it)->data_->toString(true, indexSyna) << std::endl;
         ++indexSyna;
     }
 }
@@ -220,9 +210,9 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
         typUj = TYP_OBEC;
     }
 
-    std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
-    std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj.officialTitle.find(subString) == 0; };
-    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj.porovnajTyp(typUj); };
+    std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj->officialTitle.find(subString) != std::string::npos; };
+    std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj->officialTitle.find(subString) == 0; };
+    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj->porovnajTyp(typUj); };
     std::function<bool(DataType)> lambdaVsetko = [](const DataType& uj) { return true; };
     std::function<bool(DataType)> aktualnaLambda;
 
@@ -259,7 +249,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
         });
 
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
-        std::cout << "\x1B[33m" << (*itSeq).toString() << "\033[0m" << std::endl;
+        std::cout << "\x1B[33m" << (*itSeq)->toString() << "\033[0m" << std::endl;
     }
 
     std::cout << "Pocet vysledkov: " << vystupnaSekvencia.size() << "\n";

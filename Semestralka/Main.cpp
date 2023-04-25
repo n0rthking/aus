@@ -1,5 +1,6 @@
 #include "DatovaUroven.h"
-#include "PrvaUroven.h"
+//#include "PrvaUroven.h"
+#include "DruhaUroven.h"
 #include <windows.h>
 
 int main() {
@@ -7,7 +8,8 @@ int main() {
     SetConsoleCP(1250);
 
     //DatovaUroven datovaUroven;
-    PrvaUroven prvaUroven;
+    //PrvaUroven prvaUroven;
+    DruhaUroven druhaUroven;
 
     return 0;
 }

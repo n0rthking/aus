@@ -4,22 +4,22 @@
 #include <string>
 #include <libds/amt/explicit_hierarchy.h>
 #include <libds/amt/implicit_sequence.h>
+#include "DatovaUroven.h"
 #include "Algorithm.h"
 #include "OblastNazov.h"
 #include "UzemnaJednotka.h"
 #include "Kraj.h"
 #include "Okres.h"
 #include "Obec.h"
-#include "Citac.h"
 
-using DataType = UzemnaJednotka;
+using DataType = UzemnaJednotka*;
 using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
 using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 
 const int OBLAST_ZAHRANICIE = 4;
 const int KRAJ_ZAHRANICIE = 0;
 
-class DruhaUroven
+class DruhaUroven : public DatovaUroven
 {
 private:
 	ResultType hierarchy;
