@@ -53,5 +53,8 @@
     <ClInclude Include="OblastNazov.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DatovaUroven.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
