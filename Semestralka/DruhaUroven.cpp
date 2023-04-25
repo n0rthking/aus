@@ -205,7 +205,6 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
 {
     using ResultSequence = ds::amt::ImplicitSequence<DataType>;
     ResultSequence vystupnaSekvencia;
-    Algorithm<DataType, ResultSequence> algorithm;
     std::string subString;
     std::cin >> subString;
 
@@ -250,7 +249,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrde
     auto itBegin = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, &it.dajBlockType());
     auto itEnd = ds::amt::MultiWayExplicitHierarchy<DataType>::PreOrderHierarchyIterator(&hierarchy, nullptr);
 
-    algorithm.findElementsWithProperty(
+    Algorithm::findElementsWithProperty(
         itBegin,
         itEnd,
         aktualnaLambda,

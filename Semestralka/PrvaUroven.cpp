@@ -18,8 +18,8 @@ PrvaUroven::PrvaUroven()
 
 int PrvaUroven::zistiParametre()
 {
-    std::cout << "Zadaj nazov suboru: ";
-    std::cin >> inputFilename;
+    //std::cout << "Zadaj nazov suboru: ";
+    //std::cin >> inputFilename;
 
     std::cout << "Zadaj substring: ";
     std::cin >> userInput;
@@ -44,31 +44,13 @@ int PrvaUroven::zistiParametre()
 
 bool PrvaUroven::nacitajVstup()
 {
-    Citac<UzemnaJednotka> citac("data/" + inputFilename);
-
-    if (!citac.skontrolujSubor()) {
-        std::cout << "Chybne zadany subor" << std::endl;
-        return false;
-    }
-
-    size_t pocet = 0;
-    citac.preskocPrvyRiadok();
-
-    while (citac.citajRiadok()) {
-        UzemnaJednotka uj = citac.vytvorUJ();
-        inputSequence.insertLast().data_ = uj;
-        ++pocet;
-    }
-
-    std::cout << "Nacitanych " << pocet << " zaznamov zo suboru " << inputFilename << std::endl;
-    citac.zatvorSubor();
-
+    inputSequence.assign(this->seqObce_);
     return true;
 }
 
 void PrvaUroven::filtrujZaznamyContains(const std::string& subString)
 {
-    algorithm.findElementsWithProperty(
+    Algorithm::findElementsWithProperty(
         inputSequence.begin(),
         inputSequence.end(),
         [subString](const DataType& uj) {
@@ -82,7 +64,7 @@ void PrvaUroven::filtrujZaznamyContains(const std::string& subString)
 
 void PrvaUroven::filtrujZaznamyStartsWith(const std::string& subString)
 {
-    algorithm.findElementsWithProperty(
+    Algorithm::findElementsWithProperty(
         inputSequence.begin(),
         inputSequence.end(),
         [subString](const DataType& uj) {
