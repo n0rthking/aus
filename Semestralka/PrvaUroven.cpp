@@ -4,22 +4,15 @@ PrvaUroven::PrvaUroven()
 {
     int retVal = zistiParametre();
     if (retVal != OPT_INVALID) {
-        if (nacitajVstup()) {
-            if (retVal == OPT_CONTAINS) {
-                filtrujZaznamyContains(userInput);
-            }
-            if (retVal == OPT_STARTSWITH) {
-                filtrujZaznamyStartsWith(userInput);
-            }
-            vypisVystup();
-        }
+        filtrujZaznamy(userInput, retVal);
+        vypisVystup();
     }
 }
 
 int PrvaUroven::zistiParametre()
 {
-    //std::cout << "Zadaj nazov suboru: ";
-    //std::cin >> inputFilename;
+    std::cout << "Zadaj kraje, okresy alebo obce: ";
+    std::cin >> whichFile;
 
     std::cout << "Zadaj substring: ";
     std::cin >> userInput;
@@ -42,44 +35,63 @@ int PrvaUroven::zistiParametre()
     return OPT_INVALID;
 }
 
-bool PrvaUroven::nacitajVstup()
+void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
 {
-    inputSequence.assign(this->seqObce_);
-    return true;
-}
+    std::function<bool(UzemnaJednotka)> lambdaContains = [subString](const auto& uj) { return uj.officialTitle.find(subString) != std::string::npos; };
+    std::function<bool(UzemnaJednotka)> lambdaStartsWith = [subString](const auto& uj) { return uj.officialTitle.find(subString) == 0; };
+    std::function<bool(UzemnaJednotka)> aktualnaLambda;
 
-void PrvaUroven::filtrujZaznamyContains(const std::string& subString)
-{
-    Algorithm::findElementsWithProperty(
-        inputSequence.begin(),
-        inputSequence.end(),
-        [subString](const DataType& uj) {
-            return uj.officialTitle.find(subString) != std::string::npos;
-        },
-        outputSequence,
-            [](ResultType& result, const DataType& data) {
-            result.insertLast().data_ = data;
-        });
-}
+    if (retVal == OPT_CONTAINS) {
+        aktualnaLambda = lambdaContains;
+    }
+    if (retVal == OPT_STARTSWITH) {
+        aktualnaLambda = lambdaStartsWith;
+    }
 
-void PrvaUroven::filtrujZaznamyStartsWith(const std::string& subString)
-{
-    Algorithm::findElementsWithProperty(
-        inputSequence.begin(),
-        inputSequence.end(),
-        [subString](const DataType& uj) {
-            return uj.officialTitle.find(subString) == 0;
-        },
-        outputSequence,
-            [](ResultType& result, const DataType& data) {
-            result.insertLast().data_ = data;
-        });
+    if (whichFile == "kraje") {
+        SequenceType<Kraj>* inputSequence = &this->seqKraje_;
+        Algorithm::findElementsWithProperty(
+            inputSequence->begin(),
+            inputSequence->end(),
+            aktualnaLambda,
+            outputSequence,
+            [](auto& result, const auto& data) {
+                result.insertLast().data_ = data;
+            });
+    }
+
+    else if (whichFile == "okresy") {
+        SequenceType<Okres>* inputSequence = &this->seqOkresy_;
+        Algorithm::findElementsWithProperty(
+            inputSequence->begin(),
+            inputSequence->end(),
+            aktualnaLambda,
+            outputSequence,
+            [](auto& result, const auto& data) {
+                result.insertLast().data_ = data;
+            });
+    }
+
+    else if (whichFile == "obce") {
+        SequenceType<Obec>* inputSequence = &this->seqObce_;
+        Algorithm::findElementsWithProperty(
+            inputSequence->begin(),
+            inputSequence->end(),
+            aktualnaLambda,
+            outputSequence,
+            [](auto& result, const auto& data) {
+                result.insertLast().data_ = data;
+            });
+    }
 }
 
 void PrvaUroven::vypisVystup()
 {
     std::cout << "Filtrovane zaznamy:" << std::endl << std::endl;
+    size_t pocet = 0;
     for (const auto& element : outputSequence) {
         std::cout << element.officialTitle << std::endl;
+        ++pocet;
     }
+    std::cout << "\nPocet filtrovanych zaznamov: " << pocet << "\n";
 }

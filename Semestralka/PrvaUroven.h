@@ -9,10 +9,6 @@
 #include "UzemnaJednotka.h"
 #include "Citac.h"
 
-using DataType = Obec;
-using InputType = ds::amt::ImplicitSequence<DataType>;
-using ResultType = ds::amt::ImplicitSequence<DataType>;
-
 const int OPT_CONTAINS = 1;
 const int OPT_STARTSWITH = 2;
 const int OPT_INVALID = -1;
@@ -20,16 +16,13 @@ const int OPT_INVALID = -1;
 class PrvaUroven : public DatovaUroven
 {
 private:
-	InputType inputSequence;
-	ResultType outputSequence;
-	std::string inputFilename;
+	SequenceType<UzemnaJednotka> outputSequence;
+	std::string whichFile;
 	std::string userInput;
 public:
 	PrvaUroven();
 	int zistiParametre();
-	bool nacitajVstup();
-	void filtrujZaznamyContains(const std::string& subString);
-	void filtrujZaznamyStartsWith(const std::string& subString);
+	void filtrujZaznamy(const std::string& subString, int retVal);
 	void vypisVystup();
 };
 
