@@ -1,6 +1,7 @@
 #include "libds/heap_monitor.h"
-//#include "PrvaUroven.h"
+#include "PrvaUroven.h"
 #include "DruhaUroven.h"
+#include "TretiaUroven.h"
 #include <windows.h>
 
 int main() {
@@ -9,7 +10,8 @@ int main() {
     SetConsoleCP(1250);
 
     //PrvaUroven prvaUroven;
-    DruhaUroven druhaUroven;
+    //DruhaUroven druhaUroven;
+    TretiaUroven tretiaUroven;
 
     return 0;
 }

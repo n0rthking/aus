@@ -12,16 +12,14 @@
 #include "Okres.h"
 #include "Obec.h"
 
-using DataType = UzemnaJednotka*;
-using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
-using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
-
-const int OBLAST_ZAHRANICIE = 4;
-const int KRAJ_ZAHRANICIE = 0;
-
 class DruhaUroven : public DatovaUroven
 {
 private:
+	const int OBLAST_ZAHRANICIE = 4;
+	const int KRAJ_ZAHRANICIE = 0;
+	using DataType = UzemnaJednotka*;
+	using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
+	using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 	ResultType hierarchy;
 public:
 	DruhaUroven();

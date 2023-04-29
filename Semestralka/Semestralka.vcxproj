@@ -132,6 +132,7 @@
     <ClCompile Include="DruhaUroven.cpp" />
     <ClCompile Include="PrvaUroven.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TretiaUroven.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="OblastNazov.h" />
     <ClInclude Include="Okres.h" />
     <ClInclude Include="PrvaUroven.h" />
+    <ClInclude Include="TretiaUroven.h" />
     <ClInclude Include="UzemnaJednotka.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

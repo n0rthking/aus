@@ -138,7 +138,7 @@ void DruhaUroven::NacitajObce()
     }
 }
 
-BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
+DruhaUroven::BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
 {
     int indexOblasti = std::stoi(identifikator.substr(zaciatok, 1)) - 1;
     int indexKraja = std::stoi(identifikator.substr(zaciatok + 1, 1));
@@ -151,7 +151,7 @@ BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciato
     return *hierarchy.accessRoot()->sons_->access(indexOblasti)->data_->sons_->access(indexKraja)->data_;
 }
 
-BlockResultType& DruhaUroven::vratZahranicieKraj()
+DruhaUroven::BlockResultType& DruhaUroven::vratZahranicieKraj()
 {
     return *hierarchy.accessRoot()->sons_->access(OBLAST_ZAHRANICIE)->data_->sons_->access(KRAJ_ZAHRANICIE)->data_;
 }

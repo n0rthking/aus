@@ -5,12 +5,11 @@
 #include "Citac.h"
 #include <string>
 
-template<typename Type>
-using SequenceType = ds::amt::ImplicitSequence<Type>;
-
 class DatovaUroven
 {
 protected:
+    template<typename Type>
+    using SequenceType = ds::amt::ImplicitSequence<Type>;
     SequenceType<Kraj> seqKraje_;
     SequenceType<Okres> seqOkresy_;
     SequenceType<Obec> seqObce_;
