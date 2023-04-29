@@ -158,7 +158,7 @@ namespace ds::adt {
         return dynamic_cast<amt::CIS<T>*>(this->memoryStructure_);
     }
 
-    template<typename T>
+        template<typename T>
     ExplicitQueue<T>::ExplicitQueue() :
         ADS<T>(new amt::SinglyLS<T>())
     {
@@ -173,25 +173,31 @@ namespace ds::adt {
     template<typename T>
     void ExplicitQueue<T>::push(T element)
     {
-        // TODO 09
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        this->getSequence()->insertLast().data_ = element;
     }
 
     template<typename T>
     T& ExplicitQueue<T>::peek()
     {
-        // TODO 09
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        if (this->isEmpty())
+        {
+            throw std::out_of_range("Queue is empty!");
+        }
+
+        return this->getSequence()->accessFirst()->data_;
     }
 
     template<typename T>
     T ExplicitQueue<T>::pop()
     {
-        // TODO 09
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        if (this->isEmpty())
+        {
+            throw std::out_of_range("Queue is empty!");
+        }
+
+        T result = this->getSequence()->accessFirst()->data_;
+        this->getSequence()->removeFirst();
+        return result;
     }
 
     template<typename T>
