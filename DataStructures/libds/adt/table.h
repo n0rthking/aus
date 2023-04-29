@@ -553,6 +553,7 @@ namespace ds::adt {
     HashTable<K, T>::HashTableIterator::~HashTableIterator()
     {
         delete tablesCurrent_;
+        delete tablesLast_;
         delete synonymIterator_;
     }
 
@@ -590,7 +591,7 @@ namespace ds::adt {
     template <typename K, typename T>
     TabItem<K, T>& HashTable<K, T>::HashTableIterator::operator*()
     {
-        return (**synonymIterator_).data_;
+        return (**synonymIterator_);
     }
 
     //----------
