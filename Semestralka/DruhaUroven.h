@@ -25,6 +25,7 @@ private:
 	ResultType hierarchy;
 public:
 	DruhaUroven();
+	~DruhaUroven();
 	void VytvorHierarchiu();
 	void RozhranieIteratora();
 	void NacitajKraje();

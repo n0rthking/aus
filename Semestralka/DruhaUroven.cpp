@@ -9,6 +9,15 @@ DruhaUroven::DruhaUroven()
     RozhranieIteratora();
 }
 
+DruhaUroven::~DruhaUroven()
+{
+    // koren a oblasti hierarchie alokovane cez new, ostatne su pointre na objekty v implicitnych sekvenciach
+    for (auto it = hierarchy.accessRoot()->sons_->begin(); it != hierarchy.accessRoot()->sons_->end(); ++it) {
+        delete (*it)->data_;
+    }
+    delete hierarchy.accessRoot()->data_;
+}
+
 void DruhaUroven::VytvorHierarchiu()
 {
     NacitajKraje();
@@ -46,7 +55,6 @@ void DruhaUroven::NacitajKraje()
             oblastZahranicie.data_->level = 1;
 
             auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
-            krajZahranicie.data_ = new UzemnaJednotka();
             krajZahranicie.data_ = &uj;
             krajZahranicie.data_->level = 2;
             continue;
@@ -69,7 +77,6 @@ void DruhaUroven::NacitajKraje()
         }
 
         auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti)->data_, indexKraja);
-        aktualnySyn.data_ = new UzemnaJednotka();
         aktualnySyn.data_ = &uj;
         aktualnySyn.data_->level = 2;
     }
