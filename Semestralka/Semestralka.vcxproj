@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="Citac.h" />
+    <ClInclude Include="DataTabulky.h" />
     <ClInclude Include="DatovaUroven.h" />
     <ClInclude Include="DruhaUroven.h" />
     <ClInclude Include="Kraj.h" />
