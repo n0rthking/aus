@@ -395,8 +395,7 @@ namespace ds::adt {
             BlockType* blokSKlucom = nullptr;
             if (this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
                 //this->error("tabulka uz obsahuje tento prvok");
-                blokSKlucom->data_.data_->dalsiaMetoda(data);
-                std::cout << "[debug] table.h insert collision\n";
+                blokSKlucom->data_.data_->pridajDoSekvencie(data);
                 return;
             }
             dataTabulky = (key > blokSKlucom->data_.key_)

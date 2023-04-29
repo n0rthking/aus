@@ -19,6 +19,7 @@ TretiaUroven::TretiaUroven()
 	}*/
 
 	std::string kluc;
+	std::cout << "Zadaj kluc: ";
 	std::cin >> kluc;
 	DataTabulky<Obec>** vysledok;
 	bool ok = tabulka.tryFind(kluc, vysledok);

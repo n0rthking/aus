@@ -11,24 +11,25 @@ private:
 public:
 	DataType* data_ = nullptr;
 	Sekvencia* sekvencia_ = nullptr;
+	size_t pocet_ = 0;
 
 	DataTabulky() {}
 
 	DataTabulky(DataType* newData) {
-		this->dolezitaMetoda(newData);
+		this->pridajData(newData);
 	}
 
-	void dalsiaMetoda(DataTabulky* novy) {
+	void pridajDoSekvencie(DataTabulky* novy) {
 		if (novy != nullptr) {
-			this->dolezitaMetoda(novy->data_);
+			this->pridajData(novy->data_);
 		}
 	}
 
 	void vypis() {
-		if (this->sekvencia_ == nullptr) {
+		if (this->pocet_ == 1) {
 			std::cout << this->data_->toString() << " " << this->data_->code << "\n";
 		}
-		else {
+		else if (this->pocet_ > 1) {
 			for (auto it = this->sekvencia_->begin(); it != this->sekvencia_->end(); ++it) {
 				std::cout << (*it)->toString() << " " << (*it)->code << "\n";
 			}
@@ -40,26 +41,21 @@ public:
 		delete this->sekvencia_;
 	}
 private:
-	int dolezitaMetoda(DataType* newData) {
-		if (this->data_ == nullptr && this->sekvencia_ == nullptr) {
+	void pridajData(DataType* newData) {
+		if (this->pocet_ == 0) {
 			this->data_ = newData;
-			return 1;
+			++this->pocet_;
+			return;
 		}
 
-		if (this->data_ != nullptr) {
+		if (this->pocet_ == 1) {
 			this->sekvencia_ = new Sekvencia();
 			this->sekvencia_->insertLast().data_ = this->data_;
 			this->data_ = nullptr;
-			this->sekvencia_->insertLast().data_ = newData;
-			return 2;
 		}
 
-		if (this->sekvencia_ != nullptr) {
-			this->sekvencia_->insertLast().data_ = newData;
-			return 3;
-		}
-
-		return 0;
+		this->sekvencia_->insertLast().data_ = newData;
+		++this->pocet_;
 	}
 };
 
