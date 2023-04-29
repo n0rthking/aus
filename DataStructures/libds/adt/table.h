@@ -310,9 +310,12 @@ namespace ds::adt {
     template<typename K, typename T, typename SequenceType>
     bool SequenceTable<K, T, SequenceType>::tryFind(K key, T*& data)
     {
-        // TODO 10
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        auto blokSKlucom = this->findBlockWithKey(key);
+        if (blokSKlucom == nullptr) {
+            return false;
+        }
+        data = &blokSKlucom->data_.data_;
+        return true;
     }
 
     template <typename K, typename T, typename SequenceType>
@@ -384,17 +387,38 @@ namespace ds::adt {
     template<typename K, typename T>
     void SortedSequenceTable<K, T>::insert(K key, T data)
     {
-        // TODO 10
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        TabItem<K, T>* dataTabulky;
+        if (this->isEmpty()) {
+            dataTabulky = &(this->getSequence()->insertFirst().data_);
+        }
+        else {
+            BlockType* blokSKlucom = nullptr;
+            if (this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
+                this->error("tabulka uz obsahuje tento prvok");
+            }
+            dataTabulky = (key > blokSKlucom->data_.key_)
+                ? &(this->getSequence()->insertAfter(*blokSKlucom).data_)
+                : &(this->getSequence()->insertBefore(*blokSKlucom).data_);
+        }
+        dataTabulky->key_ = key;
+        dataTabulky->data_ = data;
     }
 
     template<typename K, typename T>
     T SortedSequenceTable<K, T>::remove(K key)
     {
-        // TODO 10
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        BlockType* blokSKlucom;
+        if (!this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
+            this->error("neni prvok v tabulke");
+        }
+        auto vysledok = blokSKlucom->data_.data_;
+        if (this->getSequence()->accessFirst() == blokSKlucom) {
+            this->getSequence()->removeFirst();
+        }
+        else {
+            this->getSequence()->removeNext(*this->getSequence()->accessPrevious(*blokSKlucom));
+        }
+        return vysledok;
     }
 
     template<typename K, typename T>
@@ -407,9 +431,33 @@ namespace ds::adt {
     template<typename K, typename T>
     bool SortedSequenceTable<K, T>::tryFindBlockWithKey(K key, size_t firstIndex, size_t lastIndex, BlockType*& lastBlock)
     {
-        // TODO 10
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        if (this->isEmpty()) {
+            lastBlock = nullptr;
+            return false;
+        }
+
+        size_t middleIndex = firstIndex;
+
+        while (firstIndex < lastIndex) {
+            middleIndex = firstIndex + (lastIndex - firstIndex) / 2;
+            lastBlock = this->getSequence()->access(middleIndex);
+
+            if (lastBlock->data_.key_ < key) {
+                firstIndex = middleIndex + 1;
+            }
+
+            else {
+                if (lastBlock->data_.key_ > key) {
+                    lastIndex = middleIndex;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        lastBlock = this->getSequence()->access(middleIndex);
+        return lastBlock->data_.key_ == key;
     }
 
     //----------
@@ -553,6 +601,7 @@ namespace ds::adt {
     HashTable<K, T>::HashTableIterator::~HashTableIterator()
     {
         delete tablesCurrent_;
+        delete tablesLast_;
         delete synonymIterator_;
     }
 
@@ -590,7 +639,7 @@ namespace ds::adt {
     template <typename K, typename T>
     TabItem<K, T>& HashTable<K, T>::HashTableIterator::operator*()
     {
-        return (**synonymIterator_).data_;
+        return (**synonymIterator_);
     }
 
     //----------
