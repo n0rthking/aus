@@ -16,12 +16,15 @@ public:
 	DataTabulky() {}
 
 	DataTabulky(DataType* newData) {
-		this->pridajData(newData);
+		if (newData != nullptr) {
+			this->pridajData(newData);
+		}
 	}
 
 	void pridajDoSekvencie(DataTabulky* novy) {
 		if (novy != nullptr) {
 			this->pridajData(novy->data_);
+			delete novy;
 		}
 	}
 

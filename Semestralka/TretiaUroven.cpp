@@ -26,4 +26,8 @@ TretiaUroven::TretiaUroven()
 	if (ok) {
 		(*vysledok)->vypis();
 	}
+
+	for (auto it = this->tabulka.begin(); it != this->tabulka.end(); ++it) {
+		delete (*it).data_;
+	}
 }
