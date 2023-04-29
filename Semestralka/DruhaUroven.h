@@ -18,9 +18,9 @@ private:
 	const int OBLAST_ZAHRANICIE = 4;
 	const int KRAJ_ZAHRANICIE = 0;
 	using DataType = UzemnaJednotka*;
-	using ResultType = ds::amt::MultiWayExplicitHierarchy<DataType>;
-	using BlockResultType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
-	ResultType hierarchy;
+	using HierarchyType = ds::amt::MultiWayExplicitHierarchy<DataType>;
+	using HierarchyBlockType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
+	HierarchyType hierarchy;
 public:
 	DruhaUroven();
 	~DruhaUroven();
@@ -30,11 +30,11 @@ public:
 	void NacitajOkresy();
 	void NacitajObce();
 private:
-	BlockResultType& vratKraj(std::string identifikator, size_t zaciatok);
-	BlockResultType& vratZahranicieKraj();
+	HierarchyBlockType& vratKraj(std::string identifikator, size_t zaciatok);
+	HierarchyBlockType& vratZahranicieKraj();
 	void VypisAktualnuPoziciu(DataType uj);
-	void VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia);
-	bool VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it);
-	void filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator it);
+	void VypisSynovNaAktualnejPozicii(ds::amt::IS<HierarchyBlockType*>* synovia);
+	bool VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator& it);
+	void filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator it);
 };
 

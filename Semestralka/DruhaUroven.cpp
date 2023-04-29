@@ -138,7 +138,7 @@ void DruhaUroven::NacitajObce()
     }
 }
 
-DruhaUroven::BlockResultType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
+DruhaUroven::HierarchyBlockType& DruhaUroven::vratKraj(std::string identifikator, size_t zaciatok)
 {
     int indexOblasti = std::stoi(identifikator.substr(zaciatok, 1)) - 1;
     int indexKraja = std::stoi(identifikator.substr(zaciatok + 1, 1));
@@ -151,7 +151,7 @@ DruhaUroven::BlockResultType& DruhaUroven::vratKraj(std::string identifikator, s
     return *hierarchy.accessRoot()->sons_->access(indexOblasti)->data_->sons_->access(indexKraja)->data_;
 }
 
-DruhaUroven::BlockResultType& DruhaUroven::vratZahranicieKraj()
+DruhaUroven::HierarchyBlockType& DruhaUroven::vratZahranicieKraj()
 {
     return *hierarchy.accessRoot()->sons_->access(OBLAST_ZAHRANICIE)->data_->sons_->access(KRAJ_ZAHRANICIE)->data_;
 }
@@ -161,7 +161,7 @@ void DruhaUroven::VypisAktualnuPoziciu(DataType uj)
     std::cout << "Aktualna pozicia: \x1B[32m" + uj->toString(false) << "\033[0m" << std::endl;
 }
 
-void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* synovia)
+void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<HierarchyBlockType*>* synovia)
 {
     size_t indexSyna = 0;
     std::cout << "Synovia aktualnej uzemnej jednotky:\n";
@@ -172,7 +172,7 @@ void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<BlockResultType*>* sy
     }
 }
 
-bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator& it)
+bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator& it)
 {
     std::string vstup;
     std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit: ";
@@ -198,7 +198,7 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<BlockResultType>::PreOrder
     return false;
 }
 
-void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<BlockResultType>::PreOrderHierarchyIterator it)
+void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator it)
 {
     using ResultSequence = ds::amt::ImplicitSequence<DataType>;
     ResultSequence vystupnaSekvencia;
