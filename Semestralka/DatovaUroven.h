@@ -7,6 +7,8 @@
 
 class DatovaUroven
 {
+private:
+    bool thisIsACopyDoNotDeletePointersVeryImportant = false;
 protected:
     template<typename Type>
     using SequenceType = ds::amt::ImplicitSequence<Type>;
@@ -17,20 +19,28 @@ public:
     DatovaUroven() {}
 
     DatovaUroven(const DatovaUroven& other) {
-        std::cout << "[debug] copy constructor called\n";
         this->seqKraje_ = other.seqKraje_;
         this->seqOkresy_ = other.seqOkresy_;
         this->seqObce_ = other.seqObce_;
+        this->thisIsACopyDoNotDeletePointersVeryImportant = true;
     }
 
-	DatovaUroven(bool xyz) {
-        std::cout << "[debug] nacitaj data konstruktor\n";
+    ~DatovaUroven() {
+        if (this->thisIsACopyDoNotDeletePointersVeryImportant) {
+            return;
+        }
+        delete this->seqKraje_;
+        delete this->seqOkresy_;
+        delete this->seqObce_;
+    }
+
+	DatovaUroven(std::string suborKraje, std::string suborOkresy, std::string suborObce) {
         this->seqKraje_ = new SequenceType<Kraj>();
         this->seqOkresy_ = new SequenceType<Okres>();
         this->seqObce_ = new SequenceType<Obec>();
-        this->nacitajDataZoSuboru<Kraj>("kraje.csv", [&](Kraj kraj) { seqKraje_->insertLast().data_ = kraj; });
-        this->nacitajDataZoSuboru<Okres>("okresy.csv", [&](Okres okres) { seqOkresy_->insertLast().data_ = okres; });
-        this->nacitajDataZoSuboru<Obec>("obce.csv", [&](Obec obec) { seqObce_->insertLast().data_ = obec; });
+        this->nacitajDataZoSuboru<Kraj>(suborKraje, [&](Kraj kraj) { seqKraje_->insertLast().data_ = kraj; });
+        this->nacitajDataZoSuboru<Okres>(suborOkresy, [&](Okres okres) { seqOkresy_->insertLast().data_ = okres; });
+        this->nacitajDataZoSuboru<Obec>(suborObce, [&](Obec obec) { seqObce_->insertLast().data_ = obec; });
 	}
 private:
     template<typename DataType, typename LambdaType>

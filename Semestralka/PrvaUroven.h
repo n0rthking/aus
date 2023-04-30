@@ -20,7 +20,7 @@ private:
 	std::string whichFile;
 	std::string userInput;
 public:
-	PrvaUroven();
+	PrvaUroven(const DatovaUroven& other);
 	int zistiParametre();
 	void filtrujZaznamy(const std::string& subString, int retVal);
 	void vypisVystup();

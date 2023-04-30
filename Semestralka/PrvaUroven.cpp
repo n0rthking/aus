@@ -1,6 +1,6 @@
 #include "PrvaUroven.h"
 
-PrvaUroven::PrvaUroven()
+PrvaUroven::PrvaUroven(const DatovaUroven& other) : DatovaUroven(other)
 {
     int retVal = zistiParametre();
     if (retVal != OPT_INVALID) {

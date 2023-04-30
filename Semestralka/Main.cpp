@@ -10,8 +10,8 @@ int main() {
     SetConsoleOutputCP(1250);
     SetConsoleCP(1250);
 
-    DatovaUroven datovaUroven(true);
-    //PrvaUroven prvaUroven;
+    DatovaUroven datovaUroven("kraje.csv", "okresy.csv", "obce.csv");
+    PrvaUroven prvaUroven(datovaUroven);
     DruhaUroven druhaUroven(datovaUroven);
     TretiaUroven tretiaUroven(datovaUroven);
 
