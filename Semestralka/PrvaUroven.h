@@ -9,13 +9,12 @@
 #include "UzemnaJednotka.h"
 #include "Citac.h"
 
-const int OPT_CONTAINS = 1;
-const int OPT_STARTSWITH = 2;
-const int OPT_INVALID = -1;
-
 class PrvaUroven : public DatovaUroven
 {
 private:
+	const int OPT_CONTAINS = 1;
+	const int OPT_STARTSWITH = 2;
+	const int OPT_INVALID = -1;
 	SequenceType<UzemnaJednotka> outputSequence;
 	std::string whichFile;
 	std::string userInput;
