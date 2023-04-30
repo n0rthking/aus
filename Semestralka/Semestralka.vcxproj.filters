@@ -24,9 +24,6 @@
     <ClCompile Include="DruhaUroven.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TretiaUroven.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
