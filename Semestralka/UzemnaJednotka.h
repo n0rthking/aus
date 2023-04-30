@@ -56,6 +56,10 @@ public:
         return *this;
     }
 
+    std::string fullInfo() const {
+        return std::to_string(this->sortNumber) + "\n" + this->code + "\n" + this->officialTitle + "\n" + this->mediumTitle + "\n" + this->shortTitle + "\n" + this->note + "\n" + std::to_string(this->level);
+    }
+
     bool porovnajTyp(int zadanyTyp) const {
         return this->typ == zadanyTyp;
     }

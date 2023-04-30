@@ -22,7 +22,7 @@ private:
 	using HierarchyBlockType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 	HierarchyType hierarchy;
 public:
-	DruhaUroven();
+	DruhaUroven(const DatovaUroven& other);
 	~DruhaUroven();
 	void VytvorHierarchiu();
 	void RozhranieIteratora();

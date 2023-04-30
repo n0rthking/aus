@@ -30,11 +30,11 @@ public:
 
 	void vypis() {
 		if (this->pocet_ == 1) {
-			std::cout << this->data_->toString() << " " << this->data_->code << "\n";
+			std::cout << this->data_->fullInfo() << "\n";
 		}
 		else if (this->pocet_ > 1) {
 			for (auto it = this->sekvencia_->begin(); it != this->sekvencia_->end(); ++it) {
-				std::cout << (*it)->toString() << " " << (*it)->code << "\n";
+				std::cout << (*it)->fullInfo() << "\n";
 			}
 			std::cout << "\n";
 		}

@@ -1,6 +1,6 @@
 #include "DruhaUroven.h"
 
-DruhaUroven::DruhaUroven()
+DruhaUroven::DruhaUroven(const DatovaUroven& other) : DatovaUroven(other)
 {
     hierarchy.emplaceRoot().data_ = new UzemnaJednotka();
     hierarchy.accessRoot()->data_->officialTitle = "Slovensko";
@@ -45,7 +45,7 @@ void DruhaUroven::NacitajKraje()
 {
     OblastNazov oblastNazov;
 
-    for (auto itKraje = this->seqKraje_.begin(); itKraje != this->seqKraje_.end(); ++itKraje) {
+    for (auto itKraje = this->seqKraje_->begin(); itKraje != this->seqKraje_->end(); ++itKraje) {
         Kraj& uj = *itKraje;
 
         if (uj.note.substr(8, 1) == "*") {
@@ -85,7 +85,7 @@ void DruhaUroven::NacitajKraje()
 void DruhaUroven::NacitajOkresy()
 {
     int zahranicieCounter = 0;
-    for (auto itOkresy = this->seqOkresy_.begin(); itOkresy != this->seqOkresy_.end(); ++itOkresy) {
+    for (auto itOkresy = this->seqOkresy_->begin(); itOkresy != this->seqOkresy_->end(); ++itOkresy) {
         Okres& uj = *itOkresy;
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
@@ -110,7 +110,7 @@ void DruhaUroven::NacitajOkresy()
 
 void DruhaUroven::NacitajObce()
 {
-    for (auto itObce = this->seqObce_.begin(); itObce != this->seqObce_.end(); ++itObce) {
+    for (auto itObce = this->seqObce_->begin(); itObce != this->seqObce_->end(); ++itObce) {
         Obec& uj = *itObce;
 
         if (uj.code == "SKZZZZZZZZZZ") {

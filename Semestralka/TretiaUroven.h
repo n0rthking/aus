@@ -11,6 +11,6 @@ private:
 	using TableType = ds::adt::SortedSequenceTable<std::string, DataTabulky<Obec>*>;
 	TableType tabulka;
 public:
-	TretiaUroven();
+	TretiaUroven(const DatovaUroven& other);
 };
 

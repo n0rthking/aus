@@ -1,8 +1,8 @@
 #include "TretiaUroven.h"
 
-TretiaUroven::TretiaUroven()
+TretiaUroven::TretiaUroven(const DatovaUroven& other) : DatovaUroven(other)
 {
-	for (auto it = this->seqObce_.begin(); it != this->seqObce_.end(); ++it) {
+	for (auto it = this->seqObce_->begin(); it != this->seqObce_->end(); ++it) {
 		Obec* uj = &(*it);
 		DataTabulky<Obec>* dataTab = new DataTabulky<Obec>(uj);
 		tabulka.insert(uj->officialTitle, dataTab);

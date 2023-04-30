@@ -49,7 +49,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
     }
 
     if (whichFile == "kraje") {
-        SequenceType<Kraj>* inputSequence = &this->seqKraje_;
+        SequenceType<Kraj>* inputSequence = this->seqKraje_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
             inputSequence->end(),
@@ -61,7 +61,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
     }
 
     else if (whichFile == "okresy") {
-        SequenceType<Okres>* inputSequence = &this->seqOkresy_;
+        SequenceType<Okres>* inputSequence = this->seqOkresy_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
             inputSequence->end(),
@@ -73,7 +73,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
     }
 
     else if (whichFile == "obce") {
-        SequenceType<Obec>* inputSequence = &this->seqObce_;
+        SequenceType<Obec>* inputSequence = this->seqObce_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
             inputSequence->end(),
