@@ -116,6 +116,7 @@ namespace ds::adt {
     {
     public:
         void insert(K key, T data) override;
+        void insertWithCollisionHandling(K key, T data);
         T remove(K key) override;
 
     protected:
@@ -385,6 +386,27 @@ namespace ds::adt {
     //----------
 
     template<typename K, typename T>
+    void SortedSequenceTable<K, T>::insertWithCollisionHandling(K key, T data)
+    {
+        TabItem<K, T>* dataTabulky;
+        if (this->isEmpty()) {
+            dataTabulky = &(this->getSequence()->insertFirst().data_);
+        }
+        else {
+            BlockType* blokSKlucom = nullptr;
+            if (this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
+                blokSKlucom->data_.data_->pridajDoSekvencie(data);
+                return;
+            }
+            dataTabulky = (key > blokSKlucom->data_.key_)
+                ? &(this->getSequence()->insertAfter(*blokSKlucom).data_)
+                : &(this->getSequence()->insertBefore(*blokSKlucom).data_);
+        }
+        dataTabulky->key_ = key;
+        dataTabulky->data_ = data;
+    }
+
+    template<typename K, typename T>
     void SortedSequenceTable<K, T>::insert(K key, T data)
     {
         TabItem<K, T>* dataTabulky;
@@ -394,9 +416,7 @@ namespace ds::adt {
         else {
             BlockType* blokSKlucom = nullptr;
             if (this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
-                //this->error("tabulka uz obsahuje tento prvok");
-                blokSKlucom->data_.data_->pridajDoSekvencie(data);
-                return;
+                this->error("tabulka uz obsahuje tento prvok");
             }
             dataTabulky = (key > blokSKlucom->data_.key_)
                 ? &(this->getSequence()->insertAfter(*blokSKlucom).data_)

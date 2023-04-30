@@ -5,7 +5,7 @@ TretiaUroven::TretiaUroven(const DatovaUroven& other) : DatovaUroven(other)
 	for (auto it = this->seqObce_->begin(); it != this->seqObce_->end(); ++it) {
 		Obec* uj = &(*it);
 		DataTabulky<Obec>* dataTab = new DataTabulky<Obec>(uj);
-		tabulka.insert(uj->officialTitle, dataTab);
+		tabulka.insertWithCollisionHandling(uj->officialTitle, dataTab);
 	}
 
 	/*for (auto it = this->tabulka.begin(); it != this->tabulka.end(); ++it) {
