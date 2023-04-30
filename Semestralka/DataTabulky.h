@@ -21,11 +21,8 @@ public:
 		}
 	}
 
-	void pridajDoSekvencie(DataTabulky* novy) {
-		if (novy != nullptr) {
-			this->pridajData(novy->data_);
-			delete novy;
-		}
+	void pridajDoSekvencie(const DataTabulky& novy) {
+		this->pridajData(novy.data_);
 	}
 
 	void vypis() {

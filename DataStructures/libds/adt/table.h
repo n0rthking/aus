@@ -395,7 +395,7 @@ namespace ds::adt {
         else {
             BlockType* blokSKlucom = nullptr;
             if (this->tryFindBlockWithKey(key, 0, this->size(), blokSKlucom)) {
-                blokSKlucom->data_.data_->pridajDoSekvencie(data);
+                blokSKlucom->data_.data_.pridajDoSekvencie(data);
                 return;
             }
             dataTabulky = (key > blokSKlucom->data_.key_)
