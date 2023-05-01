@@ -24,16 +24,16 @@ public:
 		std::getline(std::cin, kluc);
 
 		std::string zvolenyTyp;
-		std::cout << "Zadaj typ: ";
+		std::cout << "Zadaj typ [kraj, okres, obec]: ";
 		std::cin >> zvolenyTyp;
 
-		if (zvolenyTyp.find("kraj") != std::string::npos) {
+		if (zvolenyTyp == "kraj") {
 			this->vyhladajVypis<Kraj>(this->tabulkaKraje, kluc);
 		}
-		else if (zvolenyTyp.find("okres") != std::string::npos) {
+		else if (zvolenyTyp == "okres") {
 			this->vyhladajVypis<Okres>(this->tabulkaOkresy, kluc);
 		}
-		else if (zvolenyTyp.find("obec") != std::string::npos) {
+		else if (zvolenyTyp == "obec") {
 			this->vyhladajVypis<Obec>(this->tabulkaObce, kluc);
 		}
 		else {
