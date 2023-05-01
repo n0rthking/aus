@@ -26,6 +26,7 @@ public:
 		std::string zvolenyTyp;
 		std::cout << "Zadaj typ [kraj, okres, obec]: ";
 		std::cin >> zvolenyTyp;
+		std::cin.ignore(256, '\n');
 
 		if (zvolenyTyp == "kraj") {
 			this->vyhladajVypis<Kraj>(this->tabulkaKraje, kluc);

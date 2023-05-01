@@ -42,10 +42,12 @@ public:
 
         std::cout << "Zadaj typ [kraj, okres, obec]: ";
         std::cin >> this->unitType;
+        std::cin.ignore(256, '\n');
 
         std::cout << "Zadaj [c]ontains alebo [s]tartsWith: ";
         std::string userOption;
         std::cin >> userOption;
+        std::cin.ignore(256, '\n');
 
         if (userOption.length() > 0) {
             std::string firstStr = userOption.substr(0, 1);
