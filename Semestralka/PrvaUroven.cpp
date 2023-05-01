@@ -11,11 +11,11 @@ PrvaUroven::PrvaUroven(const DatovaUroven& other) : DatovaUroven(other)
 
 int PrvaUroven::zistiParametre()
 {
-    std::cout << "Zadaj kraje, okresy alebo obce: ";
-    std::cin >> whichFile;
-
     std::cout << "Zadaj substring: ";
-    std::cin >> userInput;
+    std::getline(std::cin, userInput);
+
+    std::cout << "Zadaj typ [kraj, okres, obec]: ";
+    std::cin >> whichFile;
 
     std::cout << "Zadaj [c]ontains alebo [s]tartsWith: ";
     std::string userOptStr;
@@ -48,7 +48,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
         aktualnaLambda = lambdaStartsWith;
     }
 
-    if (whichFile == "kraje") {
+    if (whichFile == "kraj") {
         SequenceType<Kraj>* inputSequence = this->seqKraje_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
@@ -60,7 +60,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
             });
     }
 
-    else if (whichFile == "okresy") {
+    else if (whichFile == "okres") {
         SequenceType<Okres>* inputSequence = this->seqOkresy_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
@@ -72,7 +72,7 @@ void PrvaUroven::filtrujZaznamy(const std::string& subString, int retVal)
             });
     }
 
-    else if (whichFile == "obce") {
+    else if (whichFile == "obec") {
         SequenceType<Obec>* inputSequence = this->seqObce_;
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),

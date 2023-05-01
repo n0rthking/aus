@@ -3,11 +3,9 @@
 #include "DatovaUroven.h"
 #include <iostream>
 #include <string>
-#include <vector>
 #include <libds/amt/implicit_sequence.h>
 #include "Algorithm.h"
 #include "UzemnaJednotka.h"
-#include "Citac.h"
 
 class PrvaUroven : public DatovaUroven
 {
