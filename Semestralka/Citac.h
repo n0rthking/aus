@@ -1,12 +1,7 @@
 #pragma once
 
-#include <string>
 #include <fstream>
 #include <sstream>
-#include "UzemnaJednotka.h"
-#include "Kraj.h"
-#include "Okres.h"
-#include "Obec.h"
 
 template<typename DataType>
 class Citac

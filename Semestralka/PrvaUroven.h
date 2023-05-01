@@ -1,8 +1,6 @@
 #pragma once
 
 #include "DatovaUroven.h"
-#include <iostream>
-#include <string>
 #include <libds/amt/implicit_sequence.h>
 #include "Algorithm.h"
 #include "UzemnaJednotka.h"

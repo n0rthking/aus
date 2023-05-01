@@ -1,16 +1,11 @@
 #pragma once
 
-#include <iostream>
-#include <string>
 #include <libds/amt/explicit_hierarchy.h>
 #include <libds/amt/implicit_sequence.h>
 #include "DatovaUroven.h"
 #include "Algorithm.h"
 #include "OblastNazov.h"
 #include "UzemnaJednotka.h"
-#include "Kraj.h"
-#include "Okres.h"
-#include "Obec.h"
 
 class DruhaUroven : public DatovaUroven
 {

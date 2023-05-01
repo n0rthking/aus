@@ -3,7 +3,9 @@
 #include <libds/amt/implicit_sequence.h>
 #include "UzemnaJednotka.h"
 #include "Citac.h"
-#include <string>
+#include "Kraj.h"
+#include "Okres.h"
+#include "Obec.h"
 
 class DatovaUroven
 {
