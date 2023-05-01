@@ -3,7 +3,7 @@
 #include "UzemnaJednotka.h"
 #include <libds/amt/implicit_sequence.h>
 
-template <typename DataType>
+template<typename DataType>
 class DataTabulky
 {
 private:
