@@ -26,15 +26,21 @@ public:
 	}
 
 	void vypis() {
+		std::cout << "----------\n";
 		if (this->pocet_ == 1) {
 			std::cout << this->data_->fullInfo() << "\n";
 		}
 		else if (this->pocet_ > 1) {
+			size_t aktualnyPocet = 0;
 			for (auto it = this->sekvencia_->begin(); it != this->sekvencia_->end(); ++it) {
 				std::cout << (*it)->fullInfo() << "\n";
+				++aktualnyPocet;
+				if (aktualnyPocet < this->sekvencia_->size()) {
+					std::cout << "---\n";
+				}
 			}
-			std::cout << "\n";
 		}
+		std::cout << "----------\n";
 	}
 
 	~DataTabulky() {

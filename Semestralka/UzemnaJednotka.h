@@ -57,7 +57,13 @@ public:
     }
 
     std::string fullInfo() const {
-        return std::to_string(this->sortNumber) + "\n" + this->code + "\n" + this->officialTitle + "\n" + this->mediumTitle + "\n" + this->shortTitle + "\n" + this->note + "\n" + std::to_string(this->level);
+        return "Sort number:\t" + std::to_string(this->sortNumber)
+            + "\nCode:\t\t" + this->code
+            + "\nOfficial Title:\t" + this->officialTitle
+            + "\nMedium Title:\t" + this->mediumTitle
+            + "\nShort Title:\t" + this->shortTitle
+            + "\nNote:\t\t" + this->note
+            + "\nLevel:\t\t" + std::to_string(this->level);
     }
 
     bool porovnajTyp(int zadanyTyp) const {
