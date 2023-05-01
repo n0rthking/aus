@@ -191,9 +191,12 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOr
     else if (vstup.find("f") == 0) {
         this->filtrujHierarchiu(it);
     }
-    else {
+    else if (vstup.find("q") == 0) {
         std::cout << "\x1B[31mKoniec\033[0m\n";
         return true;
+    }
+    else {
+        std::cout << "\x1B[31mNeznama moznost\033[0m\n";
     }
 
     std::cout << "\n";
