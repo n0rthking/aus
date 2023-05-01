@@ -177,6 +177,7 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOr
     std::string vstup;
     std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit: ";
     std::cin >> vstup;
+    std::cin.ignore(256, '\n');
 
     if (vstup.find("u") == 0) {
         --it;
@@ -184,6 +185,7 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOr
     else if (vstup.find("s") == 0) {
         size_t poradie;
         std::cin >> poradie;
+        std::cin.ignore(256, '\n');
         it += poradie;
     }
     else if (vstup.find("f") == 0) {
@@ -204,6 +206,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
     ResultSequence vystupnaSekvencia;
     std::string subString;
     std::cin >> subString;
+    std::cin.ignore(256, '\n');
 
     int typUj = -1;
 
@@ -225,6 +228,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
 
     std::string predikat;
     std::cin >> predikat;
+    std::cin.ignore(256, '\n');
 
     if (predikat.find("c") == 0) {
         aktualnaLambda = lambdaContains;
