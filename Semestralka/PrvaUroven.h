@@ -11,46 +11,38 @@ private:
 	const int OPT_CONTAINS = 1;
 	const int OPT_STARTSWITH = 2;
 	const int OPT_INVALID = -1;
-	SequenceType<UzemnaJednotka> outputSequence;
 	std::string unitType;
 	std::string subString;
 public:
     PrvaUroven(const DatovaUroven& other) : DatovaUroven(other)
     {
-        int retVal = zistiParametre();
-        if (retVal != OPT_INVALID) {
-            std::function<bool(UzemnaJednotka)> lambdaContains = [&](const auto& uj) { return uj.officialTitle.find(this->subString) != std::string::npos; };
-            std::function<bool(UzemnaJednotka)> lambdaStartsWith = [&](const auto& uj) { return uj.officialTitle.find(this->subString) == 0; };
-            std::function<bool(UzemnaJednotka)> aktualnaLambda;
-
-            if (retVal == OPT_CONTAINS) {
-                aktualnaLambda = lambdaContains;
+        int filteringOption = zistiParametre();
+        if (filteringOption != OPT_INVALID) {
+            if (this->unitType == "kraj") {
+                SequenceType<Kraj*> outputSequence;
+                filtrujZaznamy(this->seqKraje_, filteringOption, outputSequence);
+                vypisVystup(outputSequence);
             }
-            if (retVal == OPT_STARTSWITH) {
-                aktualnaLambda = lambdaStartsWith;
+            else if (this->unitType == "okres") {
+                SequenceType<Okres*> outputSequence;
+                filtrujZaznamy(this->seqOkresy_, filteringOption, outputSequence);
+                vypisVystup(outputSequence);
             }
-
-            if (unitType == "kraj") {
-                filtrujZaznamy<Kraj>(this->seqKraje_, aktualnaLambda);
+            else if (this->unitType == "obec") {
+                SequenceType<Obec*> outputSequence;
+                filtrujZaznamy(this->seqObce_, filteringOption, outputSequence);
+                vypisVystup(outputSequence);
             }
-            else if (unitType == "okres") {
-                filtrujZaznamy<Okres>(this->seqOkresy_, aktualnaLambda);
-            }
-            else if (unitType == "obec") {
-                filtrujZaznamy<Obec>(this->seqObce_, aktualnaLambda);
-            }
-
-            vypisVystup();
         }
     }
 
     int zistiParametre()
     {
         std::cout << "Zadaj substring: ";
-        std::getline(std::cin, subString);
+        std::getline(std::cin, this->subString);
 
         std::cout << "Zadaj typ [kraj, okres, obec]: ";
-        std::cin >> unitType;
+        std::cin >> this->unitType;
 
         std::cout << "Zadaj [c]ontains alebo [s]tartsWith: ";
         std::string userOption;
@@ -70,25 +62,37 @@ public:
         return OPT_INVALID;
     }
 
-    template<typename DataType, typename LambdaType>
-    void filtrujZaznamy(SequenceType<DataType>* inputSequence, LambdaType filteringLambda)
+    template<typename DataType>
+    void filtrujZaznamy(SequenceType<DataType>* inputSequence, int filteringOption, SequenceType<DataType*>& outputSequence)
     {
+        std::function<bool(DataType)> lambdaContains = [&](const DataType& uj) { return uj.officialTitle.find(this->subString) != std::string::npos; };
+        std::function<bool(DataType)> lambdaStartsWith = [&](const DataType& uj) { return uj.officialTitle.find(this->subString) == 0; };
+        std::function<bool(DataType)> aktualnaLambda;
+
+        if (filteringOption == OPT_CONTAINS) {
+            aktualnaLambda = lambdaContains;
+        }
+        if (filteringOption == OPT_STARTSWITH) {
+            aktualnaLambda = lambdaStartsWith;
+        }
+
         Algorithm::findElementsWithProperty(
             inputSequence->begin(),
             inputSequence->end(),
-            filteringLambda,
+            aktualnaLambda,
             outputSequence,
-            [](SequenceType<UzemnaJednotka>& result, const DataType& data) {
-                result.insertLast().data_ = data;
+            [](SequenceType<DataType*>& result, DataType& data) {
+                result.insertLast().data_ = &data;
             });
     }
 
-    void vypisVystup()
+    template<typename DataType>
+    void vypisVystup(SequenceType<DataType>& inputSequence)
     {
         std::cout << "Filtrovane zaznamy:" << std::endl << std::endl;
         size_t pocet = 0;
-        for (const auto& element : outputSequence) {
-            std::cout << element.officialTitle << std::endl;
+        for (const auto& element : inputSequence) {
+            std::cout << element->officialTitle << std::endl;
             ++pocet;
         }
         std::cout << "\nPocet filtrovanych zaznamov: " << pocet << "\n";
