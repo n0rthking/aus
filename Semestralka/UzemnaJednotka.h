@@ -2,13 +2,9 @@
 
 #include <string>
 
-const int TYP_KRAJ = 1;
-const int TYP_OKRES = 2;
-const int TYP_OBEC = 3;
-
-const int TO_STRING_NO_INDEX = -1;
-
 class UzemnaJednotka {
+private:
+    static const int TO_STRING_NO_INDEX = -1;
 public:
     int sortNumber;
     std::string code;
@@ -17,7 +13,6 @@ public:
     std::string shortTitle;
     std::string note;
     int level;
-    int typ;
 
     UzemnaJednotka() {
         sortNumber = 0;
@@ -27,8 +22,9 @@ public:
         shortTitle = "";
         note = "";
         level = 0;
-        typ = 0;
     }
+
+    virtual void virtualnaMetodaLeboDynamicCastNejdeBezToho() {};
 
     bool operator==(const UzemnaJednotka& other) {
         if (this->sortNumber != other.sortNumber
@@ -51,7 +47,6 @@ public:
             this->shortTitle = other.shortTitle;
             this->note = other.note;
             this->level = other.level;
-            this->typ = other.typ;
         }
         return *this;
     }
@@ -64,10 +59,6 @@ public:
             + "\nShort Title:\t" + this->shortTitle
             + "\nNote:\t\t" + this->note
             + "\nLevel:\t\t" + std::to_string(this->level);
-    }
-
-    bool porovnajTyp(int zadanyTyp) const {
-        return this->typ == zadanyTyp;
     }
 
     std::string toString(bool odsadenie = true, int index = TO_STRING_NO_INDEX) const {

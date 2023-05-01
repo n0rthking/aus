@@ -4,7 +4,5 @@
 
 class Kraj : public UzemnaJednotka {
 public:
-	Kraj() : UzemnaJednotka() {
-		this->typ = TYP_KRAJ;
-	}
+	Kraj() : UzemnaJednotka() {}
 };

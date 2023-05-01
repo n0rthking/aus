@@ -4,7 +4,5 @@
 
 class Obec : public UzemnaJednotka {
 public:
-	Obec() : UzemnaJednotka() {
-		this->typ = TYP_OBEC;
-	}
+	Obec() : UzemnaJednotka() {}
 };

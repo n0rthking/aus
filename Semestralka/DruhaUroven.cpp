@@ -208,21 +208,11 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
     std::cin >> subString;
     std::cin.ignore(256, '\n');
 
-    int typUj = -1;
-
-    if (subString.find("kraj") == 0) {
-        typUj = TYP_KRAJ;
-    }
-    else if (subString.find("okres") == 0) {
-        typUj = TYP_OKRES;
-    }
-    else if (subString.find("obec") == 0) {
-        typUj = TYP_OBEC;
-    }
-
     std::function<bool(DataType)> lambdaContains = [subString](const DataType& uj) { return uj->officialTitle.find(subString) != std::string::npos; };
     std::function<bool(DataType)> lambdaStartsWith = [subString](const DataType& uj) { return uj->officialTitle.find(subString) == 0; };
-    std::function<bool(DataType)> lambdaHasType = [typUj](const DataType& uj) { return uj->porovnajTyp(typUj); };
+    std::function<bool(DataType)> lambdaHasTypeKraj = [](const DataType& uj) { return dynamic_cast<Kraj*>(uj) != nullptr; };
+    std::function<bool(DataType)> lambdaHasTypeOkres = [](const DataType& uj) { return dynamic_cast<Okres*>(uj) != nullptr; };
+    std::function<bool(DataType)> lambdaHasTypeObec = [](const DataType& uj) { return dynamic_cast<Obec*>(uj) != nullptr; };
     std::function<bool(DataType)> lambdaVsetko = [](const DataType& uj) { return true; };
     std::function<bool(DataType)> aktualnaLambda;
 
@@ -237,7 +227,19 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
         aktualnaLambda = lambdaStartsWith;
     }
     else if (predikat.find("h") == 0) {
-        aktualnaLambda = lambdaHasType;
+        if (subString.find("kraj") == 0) {
+            aktualnaLambda = lambdaHasTypeKraj;
+        }
+        else if (subString.find("okres") == 0) {
+            aktualnaLambda = lambdaHasTypeOkres;
+        }
+        else if (subString.find("obec") == 0) {
+            aktualnaLambda = lambdaHasTypeObec;
+        }
+        else {
+            std::cout << "\x1B[31mNespravny typ\033[0m\n";
+            return;
+        }
     }
     else if (predikat.find("a") == 0) {
         aktualnaLambda = lambdaVsetko;
