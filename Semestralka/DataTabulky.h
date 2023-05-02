@@ -28,12 +28,12 @@ public:
 	void vypis() {
 		std::cout << "----------\n";
 		if (this->pocet_ == 1) {
-			std::cout << this->data_->fullInfo() << "\n";
+			std::cout << "\x1B[32m" << this->data_->fullInfo() << "\033[0m\n";
 		}
 		else if (this->pocet_ > 1) {
 			size_t aktualnyPocet = 0;
 			for (auto it = this->sekvencia_->begin(); it != this->sekvencia_->end(); ++it) {
-				std::cout << (*it)->fullInfo() << "\n";
+				std::cout << "\x1B[33m" << (*it)->fullInfo() << "\033[0m\n";
 				++aktualnyPocet;
 				if (aktualnyPocet < this->sekvencia_->size()) {
 					std::cout << "---\n";

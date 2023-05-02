@@ -29,16 +29,16 @@ public:
 		std::cin.ignore(256, '\n');
 
 		if (zvolenyTyp == "kraj") {
-			this->vyhladajVypis<Kraj>(this->tabulkaKraje, kluc);
+			this->vyhladajVypis(this->tabulkaKraje, kluc);
 		}
 		else if (zvolenyTyp == "okres") {
-			this->vyhladajVypis<Okres>(this->tabulkaOkresy, kluc);
+			this->vyhladajVypis(this->tabulkaOkresy, kluc);
 		}
 		else if (zvolenyTyp == "obec") {
-			this->vyhladajVypis<Obec>(this->tabulkaObce, kluc);
+			this->vyhladajVypis(this->tabulkaObce, kluc);
 		}
 		else {
-			std::cout << "Zle zadany typ\n";
+			std::cout << "\x1B[31mNespravny typ\033[0m\n";
 		}
 	}
 
