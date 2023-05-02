@@ -11,8 +11,8 @@ int main() {
     SetConsoleCP(1250);
 
     DatovaUroven datovaUroven("kraje.csv", "okresy.csv", "obce.csv");
-    //PrvaUroven prvaUroven(datovaUroven);
-    DruhaUroven druhaUroven(datovaUroven);
+    PrvaUroven prvaUroven(datovaUroven);
+    //DruhaUroven druhaUroven(datovaUroven);
     //TretiaUroven tretiaUroven(datovaUroven);
 
     return 0;

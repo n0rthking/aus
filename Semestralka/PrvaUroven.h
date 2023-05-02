@@ -32,6 +32,9 @@ public:
                 filtrujZaznamy(this->seqObce_, filteringOption, outputSequence);
                 vypisVystup(outputSequence);
             }
+            else {
+                std::cout << "\x1B[31mNespravny typ\033[0m\n";
+            }
         }
     }
 
@@ -59,7 +62,7 @@ public:
             }
         }
 
-        std::cout << "Zle zadana moznost" << std::endl;
+        std::cout << "\x1B[31mZle zadana moznost\033[0m\n";
         return OPT_INVALID;
     }
 
@@ -93,7 +96,7 @@ public:
         std::cout << "Filtrovane zaznamy:\n\n";
         size_t pocet = 0;
         for (const DataType& element : inputSequence) {
-            std::cout << element->officialTitle << std::endl;
+            std::cout << "\x1B[33m" << element->officialTitle << "\033[0m\n";
             ++pocet;
         }
         std::cout << "\nPocet filtrovanych zaznamov: " << pocet << "\n";
