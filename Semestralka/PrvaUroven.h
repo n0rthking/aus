@@ -13,8 +13,9 @@ private:
 	std::string unitType;
 	std::string subString;
 public:
-    PrvaUroven(const DatovaUroven& other) : DatovaUroven(other)
-    {
+    PrvaUroven(const DatovaUroven& other) : DatovaUroven(other) {}
+
+    void spustiUroven() {
         int filteringOption = zistiParametre();
         if (filteringOption != OPT_INVALID) {
             if (this->unitType == "kraj") {

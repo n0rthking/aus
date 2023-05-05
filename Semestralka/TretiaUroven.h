@@ -18,7 +18,9 @@ public:
 		this->naplnTabulku(this->seqKraje_, this->tabulkaKraje);
 		this->naplnTabulku(this->seqOkresy_, this->tabulkaOkresy);
 		this->naplnTabulku(this->seqObce_, this->tabulkaObce);
+	}
 
+	void spustiUroven() {
 		std::string kluc;
 		std::cout << "Zadaj kluc: ";
 		std::getline(std::cin, kluc);

@@ -2,11 +2,7 @@
 
 DruhaUroven::DruhaUroven(const DatovaUroven& other) : DatovaUroven(other)
 {
-    hierarchy.emplaceRoot().data_ = new UzemnaJednotka();
-    hierarchy.accessRoot()->data_->officialTitle = "Slovensko";
-
     VytvorHierarchiu();
-    RozhranieIteratora();
 }
 
 DruhaUroven::~DruhaUroven()
@@ -20,6 +16,9 @@ DruhaUroven::~DruhaUroven()
 
 void DruhaUroven::VytvorHierarchiu()
 {
+    hierarchy.emplaceRoot().data_ = new UzemnaJednotka();
+    hierarchy.accessRoot()->data_->officialTitle = "Slovensko";
+
     NacitajKraje();
     NacitajOkresy();
     NacitajObce();
