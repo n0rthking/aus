@@ -284,7 +284,12 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
     }
 
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
-        std::cout << "\x1B[33m" << (*itSeq)->toString() << "\033[0m" << std::endl;
+        bool odsadenie = (utried.find("v") == 0 || utried.find("a") == 0) ? false : true;
+        std::cout << "\x1B[33m" << (*itSeq)->toString(odsadenie) << "\033[0m";
+        if (utried.find("v") == 0) {
+            std::cout << " (" << spocitajSamohlasky((*itSeq)->officialTitle) << ")";
+        }
+        std::cout << "\n";
     }
 
     std::cout << "Pocet vysledkov: " << vystupnaSekvencia.size() << "\n";
@@ -294,7 +299,7 @@ size_t DruhaUroven::spocitajSamohlasky(const std::string vstup)
 {
     size_t pocet = 0;
     for (size_t i = 0; i < vstup.length(); ++i) {
-        if (this->SAMOHLASKY.find(vstup.at(i))) {
+        if (this->SAMOHLASKY.find(std::tolower(vstup.at(i))) != std::string::npos) {
             ++pocet;
         }
     }
