@@ -6,6 +6,8 @@
 #include "Algorithm.h"
 #include "OblastNazov.h"
 #include "UzemnaJednotka.h"
+#include <libds/adt/sorts.h>
+#include <locale>
 
 class DruhaUroven : public DatovaUroven
 {

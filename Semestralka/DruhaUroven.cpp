@@ -174,7 +174,7 @@ void DruhaUroven::VypisSynovNaAktualnejPozicii(ds::amt::IS<HierarchyBlockType*>*
 bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator& it)
 {
     std::string vstup;
-    std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit: ";
+    std::cout << "Zadaj moznost [u]p, [s]on (index), [f]ilter (argument) (predicate), [q]uit:\n";
     std::cin >> vstup;
     std::cin.ignore(256, '\n');
 
@@ -262,6 +262,17 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
             [](auto& result, auto data) {
             result.insertLast().data_ = data;
         });
+
+    std::cout << "Vyber utriedenie [a]lphabetical sort, [v]owelsCount sort, [d]o not sort:\n";
+    std::string utried;
+    std::cin >> utried;
+    std::cin.ignore(256, '\n');
+
+    if (utried.find("a") == 0) {
+        std::locale skLocale("Slovak_Slovakia.1250");
+        ds::adt::QuickSort<DataType> quickSort;
+        quickSort.sort(vystupnaSekvencia, [&](DataType fst, DataType snd) { return skLocale(fst->officialTitle, snd->officialTitle); });
+    }
 
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
         std::cout << "\x1B[33m" << (*itSeq)->toString() << "\033[0m" << std::endl;
