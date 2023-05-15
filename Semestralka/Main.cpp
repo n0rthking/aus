@@ -14,9 +14,9 @@ int main() {
     PrvaUroven prvaUroven(datovaUroven);
     DruhaUroven druhaUroven(datovaUroven);
     TretiaUroven tretiaUroven(datovaUroven);
-    int cisloUrovne = 0;
+    int cisloUrovne = -1;
 
-    while (cisloUrovne != 42) {
+    while (cisloUrovne != 0) {
         std::cout << "Zadaj cislo urovne: ";
         std::cin >> cisloUrovne;
         std::cin.ignore(256, '\n');
@@ -30,8 +30,8 @@ int main() {
         else if (cisloUrovne == 3) {
             tretiaUroven.spustiUroven();
         }
-        else if (cisloUrovne == 4) {
-            return 2;
+        else if (cisloUrovne == 0) {
+            std::cout << "Koniec\n";
         }
         else if (cisloUrovne == 42) {
             std::cout << "\nthe meaning of life\n";
