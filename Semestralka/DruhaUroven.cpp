@@ -284,7 +284,7 @@ void DruhaUroven::filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreO
     }
 
     for (auto itSeq = vystupnaSekvencia.begin(); itSeq != vystupnaSekvencia.end(); ++itSeq) {
-        bool odsadenie = (utried.find("v") == 0 || utried.find("a") == 0) ? false : true;
+        bool odsadenie = !(utried.find("v") == 0 || utried.find("a") == 0);
         std::cout << "\x1B[33m" << (*itSeq)->toString(odsadenie) << "\033[0m";
         if (utried.find("v") == 0) {
             std::cout << " (" << spocitajSamohlasky((*itSeq)->officialTitle) << ")";
