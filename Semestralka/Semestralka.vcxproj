@@ -143,6 +143,7 @@
     <ClInclude Include="OblastNazov.h" />
     <ClInclude Include="Okres.h" />
     <ClInclude Include="PrvaUroven.h" />
+    <ClInclude Include="StvrtaUroven.h" />
     <ClInclude Include="TretiaUroven.h" />
     <ClInclude Include="UzemnaJednotka.h" />
   </ItemGroup>

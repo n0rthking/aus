@@ -6,8 +6,7 @@
 #include "Algorithm.h"
 #include "OblastNazov.h"
 #include "UzemnaJednotka.h"
-#include <libds/adt/sorts.h>
-#include <locale>
+#include "StvrtaUroven.h"
 
 class DruhaUroven : public DatovaUroven
 {
@@ -18,7 +17,6 @@ private:
 	using HierarchyType = ds::amt::MultiWayExplicitHierarchy<DataType>;
 	using HierarchyBlockType = ds::amt::MultiWayExplicitHierarchyBlock<DataType>;
 	HierarchyType hierarchy;
-	const std::string SAMOHLASKY = {'a', 'e', 'i', 'o', 'u', 'y', 'á', 'é', 'í', 'ó', 'ú', 'ý', 'ä', 'ô'};
 public:
 	DruhaUroven(const DatovaUroven& other);
 	~DruhaUroven();
@@ -34,6 +32,5 @@ private:
 	void VypisSynovNaAktualnejPozicii(ds::amt::IS<HierarchyBlockType*>* synovia);
 	bool VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator& it);
 	void filtrujHierarchiu(ds::amt::Hierarchy<HierarchyBlockType>::PreOrderHierarchyIterator it);
-	size_t spocitajSamohlasky(const std::string vstup);
 };
 

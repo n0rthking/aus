@@ -3,6 +3,7 @@
 #include "DatovaUroven.h"
 #include <libds/amt/implicit_sequence.h>
 #include "Algorithm.h"
+#include "StvrtaUroven.h"
 
 class PrvaUroven : public DatovaUroven
 {
@@ -94,13 +95,7 @@ public:
     template<typename DataType>
     void vypisVystup(SequenceType<DataType>& inputSequence)
     {
-        std::cout << "Filtrovane zaznamy:\n\n";
-        size_t pocet = 0;
-        for (const DataType& element : inputSequence) {
-            std::cout << "\x1B[33m" << element->officialTitle << "\033[0m\n";
-            ++pocet;
-        }
-        std::cout << "\nPocet filtrovanych zaznamov: " << pocet << "\n";
+        StvrtaUroven stvrtaUroven(inputSequence);
     }
 };
 

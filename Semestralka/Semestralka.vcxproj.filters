@@ -59,5 +59,8 @@
     <ClInclude Include="DataTabulky.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StvrtaUroven.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
