@@ -14,11 +14,13 @@ int main() {
     PrvaUroven prvaUroven(datovaUroven);
     DruhaUroven druhaUroven(datovaUroven);
     TretiaUroven tretiaUroven(datovaUroven);
-    int cisloUrovne = -1;
+    int cisloUrovne = 42;
 
     while (cisloUrovne != 0) {
-        std::cout << "Zadaj cislo urovne: ";
-        std::cin >> cisloUrovne;
+        std::cout << "Zadaj cislo urovne [1-3] alebo 0 pre koniec: ";
+        std::string vstup;
+        std::cin >> vstup;
+        cisloUrovne = std::isdigit(vstup.at(0)) ? std::stoi(vstup.substr(0, 1)) : 42;
         std::cin.ignore(256, '\n');
 
         if (cisloUrovne == 1) {
@@ -32,10 +34,6 @@ int main() {
         }
         else if (cisloUrovne == 0) {
             std::cout << "Koniec\n";
-        }
-        else if (cisloUrovne == 42) {
-            std::cout << "\nthe meaning of life\n";
-            return 42;
         }
         else {
             std::cout << "Nespravne cislo urovne\n";
