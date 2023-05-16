@@ -36,7 +36,7 @@ int main() {
             std::cout << "Koniec\n";
         }
         else {
-            std::cout << "Nespravne cislo urovne\n";
+            std::cout << "\x1B[31mNespravne cislo urovne\033[0m\n";
         }
     }
 

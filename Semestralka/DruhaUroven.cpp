@@ -182,10 +182,15 @@ bool DruhaUroven::VstupOdUzivatela(ds::amt::Hierarchy<HierarchyBlockType>::PreOr
         --it;
     }
     else if (vstup.find("s") == 0) {
-        size_t poradie;
-        std::cin >> poradie;
+        std::string poradieStr;
+        std::cin >> poradieStr;
+        try {
+            it += std::stoi(poradieStr);
+        }
+        catch (const std::exception& exc) {
+            std::cout << "\x1B[31mArgument nie je cislo\033[0m\n";
+        }
         std::cin.ignore(256, '\n');
-        it += poradie;
     }
     else if (vstup.find("f") == 0) {
         this->filtrujHierarchiu(it);
