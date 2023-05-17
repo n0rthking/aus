@@ -11,18 +11,20 @@ class StvrtaUroven
 {
 private:
 	ds::adt::QuickSort<DataType> quickSort;
+    std::locale skLocale;
 	const std::string SAMOHLASKY = { 'a', 'e', 'i', 'o', 'u', 'y', 'á', 'é', 'í', 'ó', 'ú', 'ý', 'ä', 'ô' };
 
 public:
 	StvrtaUroven(ds::amt::ImplicitSequence<DataType>& sekvencia) {
+        this->skLocale = std::locale("Slovak_Slovakia.1250");
+
         std::cout << "Vyber utriedenie [a]lphabetical sort, [v]owelsCount sort, [d]o not sort:\n";
         std::string utried;
         std::cin >> utried;
         std::cin.ignore(256, '\n');
 
         if (utried.find("a") == 0) {
-            std::locale skLocale("Slovak_Slovakia.1250");
-            quickSort.sort(sekvencia, [&](DataType fst, DataType snd) { return skLocale(fst->officialTitle, snd->officialTitle); });
+            quickSort.sort(sekvencia, [&](DataType fst, DataType snd) { return this->skLocale(fst->officialTitle, snd->officialTitle); });
             std::cout << "Vystup zoradeny abecedne\n";
         }
         else if (utried.find("v") == 0) {
@@ -49,7 +51,7 @@ private:
 	size_t spocitajSamohlasky(const std::string vstup) {
 		size_t pocet = 0;
 		for (size_t i = 0; i < vstup.length(); ++i) {
-			if (this->SAMOHLASKY.find(std::tolower(vstup.at(i))) != std::string::npos) {
+			if (this->SAMOHLASKY.find(std::tolower(vstup.at(i), this->skLocale)) != std::string::npos) {
 				++pocet;
 			}
 		}
