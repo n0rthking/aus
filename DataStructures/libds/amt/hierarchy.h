@@ -185,6 +185,8 @@ namespace ds::amt {
 
 		InOrderHierarchyIterator begin();
         InOrderHierarchyIterator end();
+
+		using IteratorType = InOrderHierarchyIterator;
     };
 
 	//----------
