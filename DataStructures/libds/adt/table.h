@@ -1060,7 +1060,7 @@ namespace ds::adt {
             else {
                 this->rotateLeft(node);
             }
-            parent = this->getHierarchy()->accessParent(*parent);
+            parent = this->getHierarchy()->accessParent(*node);
         }
     }
 }
