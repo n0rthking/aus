@@ -21,6 +21,13 @@ public:
 		}
 	}
 
+	bool operator==(const DataTabulky& other) const {
+		if (this->data_ != other.data_ || this->sekvencia_ != other.sekvencia_ || this->pocet_ != other.pocet_) {
+			return false;
+		}
+		return true;
+	}
+
 	void pridajDoSekvencie(const DataTabulky& novy) {
 		this->pridajData(novy.data_);
 	}

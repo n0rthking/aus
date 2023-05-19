@@ -220,6 +220,7 @@ namespace ds::adt {
         void clear() override;
 
         void insert(K key, T data) override;
+        void insertWithCollisionHandling(K key, T data);
         bool tryFind(K key, T*& data) override;
         T remove(K key) override;
 
@@ -272,6 +273,9 @@ namespace ds::adt {
 
         void removeNode(BSTNodeType* node) override;
         void balanceTree(BSTNodeType* node) override;
+
+    public:
+        void insertWithCollisionHandling(K key, T data);
 
     private:
         std::default_random_engine rng_;
@@ -782,6 +786,34 @@ namespace ds::adt {
     }
 
     template<typename K, typename T, typename BlockType>
+    void GeneralBinarySearchTree<K, T, BlockType>::insertWithCollisionHandling(K key, T data)
+    {
+        BSTNodeType* newNode = nullptr;
+        if (this->isEmpty())
+        {
+            newNode = &this->getHierarchy()->emplaceRoot();
+        }
+        else
+        {
+            BSTNodeType* parent = nullptr;
+            if (this->tryFindNodeWithKey(key, parent))
+            {
+                parent->data_.data_.pridajDoSekvencie(data);
+                return;
+            }
+            newNode = key > parent->data_.key_
+                ? &this->getHierarchy()->insertRightSon(*parent)
+                : &this->getHierarchy()->insertLeftSon(*parent);
+        }
+
+        newNode->data_.key_ = key;
+        newNode->data_.data_ = data;
+
+        ++size_;
+        this->balanceTree(newNode);
+    }
+
+    template<typename K, typename T, typename BlockType>
     bool GeneralBinarySearchTree<K, T, BlockType>::tryFind(K key, T*& data)
     {
         BSTNodeType* nodeWithKey = nullptr;
@@ -1007,6 +1039,12 @@ namespace ds::adt {
         }
 
         GeneralBinarySearchTree<K, T, TreapItem<K, T>>::removeNode(node);
+    }
+
+    template<typename K, typename T>
+    void Treap<K, T>::insertWithCollisionHandling(K key, T data)
+    {
+        GeneralBinarySearchTree<K, T, TreapItem<K, T>>::insertWithCollisionHandling(key, data);
     }
 
     template<typename K, typename T>

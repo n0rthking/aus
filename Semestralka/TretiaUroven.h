@@ -8,7 +8,7 @@ class TretiaUroven : public DatovaUroven
 {
 private:
 	template<typename Type>
-	using TableType = ds::adt::SortedSequenceTable<std::string, DataTabulky<Type>>;
+	using TableType = ds::adt::Treap<std::string, DataTabulky<Type>>;
 
 	TableType<Kraj> tabulkaKraje;
 	TableType<Okres> tabulkaOkresy;
