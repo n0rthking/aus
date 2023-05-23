@@ -53,9 +53,9 @@ public:
 	}
 
 	template<typename DataType>
-	void naplnTabulku(SequenceType<DataType>* inputSequence, TableType<DataType>& inputTable) {
+	void naplnTabulku(SequenceType<DataType*>* inputSequence, TableType<DataType>& inputTable) {
 		for (auto it = inputSequence->begin(); it != inputSequence->end(); ++it) {
-			inputTable.insertWithCollisionHandling((*it).officialTitle, DataTabulky<DataType>(&(*it)));
+			inputTable.insertWithCollisionHandling((*it)->officialTitle, DataTabulky<DataType>(*it));
 		}
 	}
 };

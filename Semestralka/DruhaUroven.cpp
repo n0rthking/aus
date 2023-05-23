@@ -45,22 +45,22 @@ void DruhaUroven::NacitajKraje()
     OblastNazov oblastNazov;
 
     for (auto itKraje = this->seqKraje_->begin(); itKraje != this->seqKraje_->end(); ++itKraje) {
-        Kraj& uj = *itKraje;
+        Kraj* uj = *itKraje;
 
-        if (uj.note.substr(8, 1) == "*") {
+        if (uj->note.substr(8, 1) == "*") {
             auto& oblastZahranicie = hierarchy.emplaceSon(*hierarchy.accessRoot(), OBLAST_ZAHRANICIE);
             oblastZahranicie.data_ = new UzemnaJednotka();
             oblastZahranicie.data_->officialTitle = oblastNazov.dajNazovOblasti();
             oblastZahranicie.data_->level = 1;
 
             auto& krajZahranicie = hierarchy.emplaceSon(oblastZahranicie, KRAJ_ZAHRANICIE);
-            krajZahranicie.data_ = &uj;
+            krajZahranicie.data_ = uj;
             krajZahranicie.data_->level = 2;
             continue;
         }
 
-        int indexOblasti = std::stoi(uj.note.substr(8, 1)) - 1;
-        int indexKraja = std::stoi(uj.note.substr(9, 1));
+        int indexOblasti = std::stoi(uj->note.substr(8, 1)) - 1;
+        int indexKraja = std::stoi(uj->note.substr(9, 1));
 
         // uprava indexov pre vsetky okrem toho kde je bratislavsky kraj
         if (indexOblasti != 0) {
@@ -76,7 +76,7 @@ void DruhaUroven::NacitajKraje()
         }
 
         auto& aktualnySyn = hierarchy.emplaceSon(*hierarchy.accessRoot()->sons_->access(indexOblasti)->data_, indexKraja);
-        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_->level = 2;
     }
 }
@@ -85,24 +85,24 @@ void DruhaUroven::NacitajOkresy()
 {
     int zahranicieCounter = 0;
     for (auto itOkresy = this->seqOkresy_->begin(); itOkresy != this->seqOkresy_->end(); ++itOkresy) {
-        Okres& uj = *itOkresy;
+        Okres* uj = *itOkresy;
 
         // 2 okresy zahranicie nemaju note, takze ich treba manualne pridat do kraju zahranicie
-        if (uj.note.length() == 0) {
+        if (uj->note.length() == 0) {
             auto& aktualnySynZahranicie = hierarchy.emplaceSon(vratZahranicieKraj(), zahranicieCounter);
 
-            aktualnySynZahranicie.data_ = &uj;
+            aktualnySynZahranicie.data_ = uj;
             aktualnySynZahranicie.data_->level = 3;
             ++zahranicieCounter;
             continue;
         }
 
         // poradie okresu v ramci jeho kraja su posledne 2 znaky v note
-        int indexOkresu = std::stoi(uj.note.substr(1, 2)) - 1;
-        auto& aktualnyKraj = vratKraj(uj.code, 3);
+        int indexOkresu = std::stoi(uj->note.substr(1, 2)) - 1;
+        auto& aktualnyKraj = vratKraj(uj->code, 3);
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyKraj, indexOkresu);
 
-        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_->level = 3;
     }
 }
@@ -110,29 +110,29 @@ void DruhaUroven::NacitajOkresy()
 void DruhaUroven::NacitajObce()
 {
     for (auto itObce = this->seqObce_->begin(); itObce != this->seqObce_->end(); ++itObce) {
-        Obec& uj = *itObce;
+        Obec* uj = *itObce;
 
-        if (uj.code == "SKZZZZZZZZZZ") {
+        if (uj->code == "SKZZZZZZZZZZ") {
             auto& zahranicieVelaZ = *vratZahranicieKraj().sons_->access(1)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieVelaZ, 0);
-            aktualnySynZahranicia.data_ = &uj;
+            aktualnySynZahranicia.data_ = uj;
             aktualnySynZahranicia.data_->level = 4;
             continue;
         }
-        else if (uj.code == "SKZZZZ") {
+        else if (uj->code == "SKZZZZ") {
             auto& zahranicieMaloZ = *vratZahranicieKraj().sons_->access(0)->data_;
             auto& aktualnySynZahranicia = hierarchy.emplaceSon(zahranicieMaloZ, 0);
-            aktualnySynZahranicia.data_ = &uj;
+            aktualnySynZahranicia.data_ = uj;
             aktualnySynZahranicia.data_->level = 4;
             continue;
         }
 
         // index okresu je posledne cislo z trojcislia zacinajuce za retazcom SK0, pozor v hexa sustave
-        int indexOkresu = std::stoi(uj.code.substr(5, 1), nullptr, 16) - 1;
-        auto& aktualnyOkres = *vratKraj(uj.code, 3).sons_->access(indexOkresu)->data_;
+        int indexOkresu = std::stoi(uj->code.substr(5, 1), nullptr, 16) - 1;
+        auto& aktualnyOkres = *vratKraj(uj->code, 3).sons_->access(indexOkresu)->data_;
         auto& aktualnySyn = hierarchy.emplaceSon(aktualnyOkres, aktualnyOkres.sons_->size());
 
-        aktualnySyn.data_ = &uj;
+        aktualnySyn.data_ = uj;
         aktualnySyn.data_->level = 4;
     }
 }

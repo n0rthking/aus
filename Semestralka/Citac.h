@@ -30,29 +30,29 @@ public:
 		return !std::getline(suborStream, aktualnyRiadok).fail();
 	}
 
-	DataType vytvorUJ()
+	DataType* vytvorUJ()
 	{
 		std::string hodnota;
 		std::stringstream strstrm(aktualnyRiadok);
-		DataType uj;
+		DataType* uj = new DataType();
 
 		std::getline(strstrm, hodnota, ';');
-		uj.sortNumber = std::stoi(hodnota);
+		uj->sortNumber = std::stoi(hodnota);
 
 		std::getline(strstrm, hodnota, ';');
-		uj.code = hodnota;
+		uj->code = hodnota;
 
 		std::getline(strstrm, hodnota, ';');
-		uj.officialTitle = hodnota;
+		uj->officialTitle = hodnota;
 
 		std::getline(strstrm, hodnota, ';');
-		uj.mediumTitle = hodnota;
+		uj->mediumTitle = hodnota;
 
 		std::getline(strstrm, hodnota, ';');
-		uj.shortTitle = hodnota;
+		uj->shortTitle = hodnota;
 
 		std::getline(strstrm, hodnota, ';');
-		uj.note = hodnota;
+		uj->note = hodnota;
 
 		return uj;
 	}

@@ -14,9 +14,9 @@ private:
 protected:
     template<typename Type>
     using SequenceType = ds::amt::ImplicitSequence<Type>;
-    SequenceType<Kraj>* seqKraje_ = nullptr;
-    SequenceType<Okres>* seqOkresy_ = nullptr;
-    SequenceType<Obec>* seqObce_ = nullptr;
+    SequenceType<Kraj*>* seqKraje_ = nullptr;
+    SequenceType<Okres*>* seqOkresy_ = nullptr;
+    SequenceType<Obec*>* seqObce_ = nullptr;
 public:
     DatovaUroven() {}
 
@@ -31,18 +31,27 @@ public:
         if (this->thisIsACopyDoNotDeletePointersVeryImportant) {
             return;
         }
+        for (auto it = this->seqKraje_->begin(); it != this->seqKraje_->end(); ++it) {
+            delete (*it);
+        }
+        for (auto it = this->seqOkresy_->begin(); it != this->seqOkresy_->end(); ++it) {
+            delete (*it);
+        }
+        for (auto it = this->seqObce_->begin(); it != this->seqObce_->end(); ++it) {
+            delete (*it);
+        }
         delete this->seqKraje_;
         delete this->seqOkresy_;
         delete this->seqObce_;
     }
 
 	DatovaUroven(std::string suborKraje, std::string suborOkresy, std::string suborObce) {
-        this->seqKraje_ = new SequenceType<Kraj>();
-        this->seqOkresy_ = new SequenceType<Okres>();
-        this->seqObce_ = new SequenceType<Obec>();
-        this->nacitajDataZoSuboru<Kraj>(suborKraje, [&](Kraj kraj) { seqKraje_->insertLast().data_ = kraj; });
-        this->nacitajDataZoSuboru<Okres>(suborOkresy, [&](Okres okres) { seqOkresy_->insertLast().data_ = okres; });
-        this->nacitajDataZoSuboru<Obec>(suborObce, [&](Obec obec) { seqObce_->insertLast().data_ = obec; });
+        this->seqKraje_ = new SequenceType<Kraj*>();
+        this->seqOkresy_ = new SequenceType<Okres*>();
+        this->seqObce_ = new SequenceType<Obec*>();
+        this->nacitajDataZoSuboru<Kraj>(suborKraje, [&](Kraj* kraj) { seqKraje_->insertLast().data_ = kraj; });
+        this->nacitajDataZoSuboru<Okres>(suborOkresy, [&](Okres* okres) { seqOkresy_->insertLast().data_ = okres; });
+        this->nacitajDataZoSuboru<Obec>(suborObce, [&](Obec* obec) { seqObce_->insertLast().data_ = obec; });
 	}
 private:
     template<typename DataType, typename LambdaType>

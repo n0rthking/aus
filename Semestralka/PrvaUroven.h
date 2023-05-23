@@ -69,10 +69,10 @@ public:
     }
 
     template<typename DataType>
-    void filtrujZaznamy(SequenceType<DataType>* inputSequence, int filteringOption, SequenceType<DataType*>& outputSequence)
+    void filtrujZaznamy(SequenceType<DataType>* inputSequence, int filteringOption, SequenceType<DataType>& outputSequence)
     {
-        std::function<bool(DataType)> lambdaContains = [&](const DataType& uj) { return uj.officialTitle.find(this->subString) != std::string::npos; };
-        std::function<bool(DataType)> lambdaStartsWith = [&](const DataType& uj) { return uj.officialTitle.find(this->subString) == 0; };
+        std::function<bool(DataType)> lambdaContains = [&](DataType uj) { return uj->officialTitle.find(this->subString) != std::string::npos; };
+        std::function<bool(DataType)> lambdaStartsWith = [&](DataType uj) { return uj->officialTitle.find(this->subString) == 0; };
         std::function<bool(DataType)> aktualnaLambda;
 
         if (filteringOption == OPT_CONTAINS) {
@@ -87,8 +87,8 @@ public:
             inputSequence->end(),
             aktualnaLambda,
             outputSequence,
-            [](SequenceType<DataType*>& result, DataType& data) {
-                result.insertLast().data_ = &data;
+            [](SequenceType<DataType>& result, DataType data) {
+                result.insertLast().data_ = data;
             });
     }
 
