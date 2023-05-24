@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.66cm" height="36.75cm" viewBox="0 0 1272 1389">
+<title></title>
+<desc>Created with Enterprise Architect (Build: 1625) 1</desc>
+
+<g style="fill:#FFFFFF;fill-opacity:1.00;">
+	 <rect x="0" y="0" width="1272" height="1389" shape-rendering="auto"/>
+</g><g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:miter; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 6 6 L 6 1383 L 1266 1383 L 1266 6 L 6 6" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:miter; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 6 26 L 85 26 L 98 12 L 98 6 L 6 6 L 6 26 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:miter; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="11.00" y="19.00" textLength="72" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 11.00 19.00)">class Semestralka</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:miter; fill:#E5E5E5;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 825 251 L 1222 251 L 1222 321 L 825 321 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="1003.00" y="270.00" textLength="40" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 1003.00 270.00)">Algorithm</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 825 278 L 1221 278" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="837.00" y="296.00" textLength="46" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 837.00 296.00)">«template»</text>
+	<text x="830.00" y="309.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 309.00)">+ </text>
+	<text x="847.00" y="309.00" textLength="372" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 309.00)">findElementsWithProperty(Iterator, Iterator, PredicateType, ResultType&amp;, InserterType): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 847 311 L 1219 311" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 76 476 L 227 476 L 227 630 L 76 630 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00" stroke-dasharray="6,3">
+  <path d="M 166 458 L 260 458 L 260 488 L 166 488 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="171.00" y="471.00" textLength="87" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 171.00 471.00)">DataType : typename</text>
+	<text x="142.00" y="501.00" textLength="19" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 142.00 501.00)">Citac</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 76 509 L 226 509" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="81.00" y="523.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 523.00)">- </text>
+	<text x="98.00" y="523.00" textLength="124" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 523.00)">aktualnyRiadok: std::string = &quot;&quot;</text>
+	<text x="81.00" y="536.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 536.00)">- </text>
+	<text x="98.00" y="536.00" textLength="107" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 536.00)">suborStream: std::ifstream</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 76 543 L 226 543" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="81.00" y="557.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 557.00)">+ </text>
+	<text x="98.00" y="557.00" textLength="65" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 557.00)">Citac(std::string)</text>
+	<text x="81.00" y="570.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 570.00)">+ </text>
+	<text x="98.00" y="570.00" textLength="71" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 570.00)">citajRiadok(): bool</text>
+	<text x="81.00" y="583.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 583.00)">+ </text>
+	<text x="98.00" y="583.00" textLength="104" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 583.00)">preskocPrvyRiadok(): void</text>
+	<text x="81.00" y="596.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 596.00)">+ </text>
+	<text x="98.00" y="596.00" textLength="90" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 596.00)">skontrolujSubor(): bool</text>
+	<text x="81.00" y="609.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 609.00)">+ </text>
+	<text x="98.00" y="609.00" textLength="85" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 609.00)">vytvorUJ(): DataType</text>
+	<text x="81.00" y="622.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 81.00 622.00)">+ </text>
+	<text x="98.00" y="622.00" textLength="76" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 98.00 622.00)">zatvorSubor(): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 847 L 964 847 L 964 1027 L 778 1027 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00" stroke-dasharray="6,3">
+  <path d="M 889 829 L 984 829 L 984 859 L 889 859 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="894.00" y="842.00" textLength="87" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 894.00 842.00)">DataType : typename</text>
+	<text x="845.00" y="872.00" textLength="51" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 845.00 872.00)">DataTabulky</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 880 L 963 880" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="783.00" y="894.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 894.00)">+ </text>
+	<text x="800.00" y="894.00" textLength="106" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 894.00)">data_: DataType* = nullptr</text>
+	<text x="783.00" y="907.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 907.00)">+ </text>
+	<text x="800.00" y="907.00" textLength="69" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 907.00)">pocet_: size_t = 0</text>
+	<text x="783.00" y="920.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 920.00)">+ </text>
+	<text x="800.00" y="920.00" textLength="130" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 920.00)">sekvencia_: Sekvencia* = nullptr</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 927 L 963 927" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="783.00" y="941.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 941.00)">+ </text>
+	<text x="800.00" y="941.00" textLength="57" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 941.00)">DataTabulky()</text>
+	<text x="783.00" y="954.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 954.00)">+ </text>
+	<text x="800.00" y="954.00" textLength="101" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 954.00)">DataTabulky(DataType*)</text>
+	<text x="783.00" y="967.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 967.00)">+ </text>
+	<text x="800.00" y="967.00" textLength="62" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 967.00)">~DataTabulky()</text>
+	<text x="783.00" y="980.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 980.00)">+ </text>
+	<text x="800.00" y="980.00" textLength="161" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 980.00)">operator==(DataTabulky&amp;): bool {query}</text>
+	<text x="783.00" y="993.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 993.00)">- </text>
+	<text x="800.00" y="993.00" textLength="113" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 993.00)">pridajData(DataType*): void</text>
+	<text x="783.00" y="1006.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 1006.00)">+ </text>
+	<text x="800.00" y="1006.00" textLength="160" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 1006.00)">pridajDoSekvencie(DataTabulky&amp;): void</text>
+	<text x="783.00" y="1019.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 1019.00)">+ </text>
+	<text x="800.00" y="1019.00" textLength="49" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 1019.00)">vypis(): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 1042 899 L 1204 899 L 1204 969 L 1042 969 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="1043.00" y="912.00" textLength="158" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 1043.00 912.00)">ds::amt::ImplicitSequence&lt;DataType*&gt;</text>
+	<text x="1109.00" y="931.00" textLength="28" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 1109.00 931.00)">«alias»</text>
+	<text x="1074.00" y="944.00" textLength="98" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 1074.00 944.00)">DataTabulky::Sekvencia</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 387 575 L 653 575 L 653 753 L 387 753 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="490.00" y="594.00" textLength="60" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 490.00 594.00)">DatovaUroven</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 387 602 L 652 602" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="392.00" y="616.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 616.00)"># </text>
+	<text x="409.00" y="616.00" textLength="167" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 616.00)">seqKraje_: SequenceType&lt;Kraj&gt;* = nullptr</text>
+	<text x="392.00" y="629.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 629.00)"># </text>
+	<text x="409.00" y="629.00" textLength="174" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 629.00)">seqObce_: SequenceType&lt;Obec&gt;* = nullptr</text>
+	<text x="392.00" y="642.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 642.00)"># </text>
+	<text x="409.00" y="642.00" textLength="185" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 642.00)">seqOkresy_: SequenceType&lt;Okres&gt;* = nullptr</text>
+	<text x="392.00" y="655.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 655.00)">- </text>
+	<text x="409.00" y="655.00" textLength="239" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 655.00)">thisIsACopyDoNotDeletePointersVeryImportant: bool = false</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 387 662 L 652 662" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="392.00" y="676.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 676.00)">+ </text>
+	<text x="409.00" y="676.00" textLength="64" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 676.00)">DatovaUroven()</text>
+	<text x="392.00" y="689.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 689.00)">+ </text>
+	<text x="409.00" y="689.00" textLength="129" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 689.00)">DatovaUroven(DatovaUroven&amp;)</text>
+	<text x="392.00" y="702.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 702.00)">+ </text>
+	<text x="409.00" y="702.00" textLength="69" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 702.00)">~DatovaUroven()</text>
+	<text x="392.00" y="715.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 715.00)">+ </text>
+	<text x="409.00" y="715.00" textLength="194" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 715.00)">DatovaUroven(std::string, std::string, std::string)</text>
+	<text x="399.00" y="732.00" textLength="46" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 399.00 732.00)">«template»</text>
+	<text x="392.00" y="745.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 392.00 745.00)">- </text>
+	<text x="409.00" y="745.00" textLength="208" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 409.00 745.00)">nacitajDataZoSuboru(std::string, LambdaType): bool</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 86 688 L 224 688 L 224 781 L 86 781 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="87.00" y="713.00" textLength="134" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 87.00 713.00)">ds::amt::ImplicitSequence&lt;Type&gt;</text>
+	<text x="141.00" y="732.00" textLength="28" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 141.00 732.00)">«alias»</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00" stroke-dasharray="6,3">
+  <path d="M 167 670 L 244 670 L 244 700 L 167 700 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="172.00" y="683.00" textLength="68" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 172.00 683.00)">Type : typename</text>
+	<text x="92.00" y="745.00" textLength="125" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 92.00 745.00)">DatovaUroven::SequenceType</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 317 224 L 723 224 L 723 476 L 317 476 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="492.00" y="243.00" textLength="56" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 492.00 243.00)">DruhaUroven</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 317 251 L 722 251" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="322.00" y="265.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 265.00)">- </text>
+	<text x="339.00" y="265.00" textLength="100" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 265.00)">hierarchy: HierarchyType</text>
+	<text x="322.00" y="278.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 278.00)">- </text>
+	<text x="339.00" y="278.00" textLength="148" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 278.00)">KRAJ_ZAHRANICIE: int = 0 {readOnly}</text>
+	<text x="322.00" y="291.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 291.00)">- </text>
+	<text x="339.00" y="291.00" textLength="161" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 291.00)">OBLAST_ZAHRANICIE: int = 4 {readOnly}</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 317 298 L 722 298" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="322.00" y="312.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 312.00)">+ </text>
+	<text x="339.00" y="312.00" textLength="124" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 312.00)">DruhaUroven(DatovaUroven&amp;)</text>
+	<text x="322.00" y="325.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 325.00)">+ </text>
+	<text x="339.00" y="325.00" textLength="64" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 325.00)">~DruhaUroven()</text>
+	<text x="322.00" y="338.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 338.00)">- </text>
+	<text x="339.00" y="338.00" textLength="362" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 338.00)">filtrujHierarchiu(ds::amt::Hierarchy&lt;HierarchyBlockType&gt;::PreOrderHierarchyIterator): void</text>
+	<text x="322.00" y="351.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 351.00)">+ </text>
+	<text x="339.00" y="351.00" textLength="75" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 351.00)">NacitajKraje(): void</text>
+	<text x="322.00" y="364.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 364.00)">+ </text>
+	<text x="339.00" y="364.00" textLength="76" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 364.00)">NacitajObce(): void</text>
+	<text x="322.00" y="377.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 377.00)">+ </text>
+	<text x="339.00" y="377.00" textLength="84" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 377.00)">NacitajOkresy(): void</text>
+	<text x="322.00" y="390.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 390.00)">+ </text>
+	<text x="339.00" y="390.00" textLength="102" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 390.00)">RozhranieIteratora(): void</text>
+	<text x="322.00" y="403.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 403.00)">- </text>
+	<text x="339.00" y="403.00" textLength="196" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 403.00)">vratKraj(std::string, size_t): HierarchyBlockType&amp;</text>
+	<text x="322.00" y="416.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 416.00)">- </text>
+	<text x="339.00" y="416.00" textLength="169" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 416.00)">vratZahranicieKraj(): HierarchyBlockType&amp;</text>
+	<text x="322.00" y="429.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 429.00)">- </text>
+	<text x="339.00" y="429.00" textLength="381" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 429.00)">VstupOdUzivatela(ds::amt::Hierarchy&lt;HierarchyBlockType&gt;::PreOrderHierarchyIterator&amp;): bool</text>
+	<text x="322.00" y="442.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 442.00)">- </text>
+	<text x="339.00" y="442.00" textLength="152" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 442.00)">VypisAktualnuPoziciu(DataType): void</text>
+	<text x="322.00" y="455.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 455.00)">- </text>
+	<text x="339.00" y="455.00" textLength="292" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 455.00)">VypisSynovNaAktualnejPozicii(ds::amt::IS&lt;HierarchyBlockType*&gt;*): void</text>
+	<text x="322.00" y="468.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 322.00 468.00)">+ </text>
+	<text x="339.00" y="468.00" textLength="95" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 339.00 468.00)">VytvorHierarchiu(): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 53 205 L 266 205 L 266 275 L 53 275 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="54.00" y="218.00" textLength="209" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 54.00 218.00)">ds::amt::MultiWayExplicitHierarchyBlock&lt;DataType&gt;</text>
+	<text x="145.00" y="237.00" textLength="28" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 145.00 237.00)">«alias»</text>
+	<text x="87.00" y="250.00" textLength="144" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 87.00 250.00)">DruhaUroven::HierarchyBlockType</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 56 314 L 248 314 L 248 384 L 56 384 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="57.00" y="327.00" textLength="188" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 57.00 327.00)">ds::amt::MultiWayExplicitHierarchy&lt;DataType&gt;</text>
+	<text x="138.00" y="346.00" textLength="28" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 138.00 346.00)">«alias»</text>
+	<text x="122.00" y="359.00" textLength="60" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 122.00 359.00)">HierarchyType</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1085 L 273 1085 L 273 1155 L 183 1155 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="219.00" y="1104.00" textLength="17" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 219.00 1104.00)">Kraj</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1112 L 272 1112" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="188.00" y="1126.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 188.00 1126.00)">+ </text>
+	<text x="205.00" y="1126.00" textLength="21" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 205.00 1126.00)">Kraj()</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1286 L 273 1286 L 273 1356 L 183 1356 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="217.00" y="1305.00" textLength="21" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 217.00 1305.00)">Obec</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1313 L 272 1313" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="188.00" y="1327.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 188.00 1327.00)">+ </text>
+	<text x="205.00" y="1327.00" textLength="27" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 205.00 1327.00)">Obec()</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 415 40 L 626 40 L 626 136 L 415 136 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="494.00" y="59.00" textLength="52" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 494.00 59.00)">OblastNazov</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 415 67 L 625 67" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="420.00" y="81.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 81.00)">- </text>
+	<text x="437.00" y="81.00" textLength="184" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 437.00 81.00)">nazvy: ds::amt::ImplicitSequence&lt;std::string&gt;</text>
+	<text x="420.00" y="94.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 94.00)">- </text>
+	<text x="437.00" y="94.00" textLength="78" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 437.00 94.00)">pocitadlo: size_t = 0</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 415 101 L 625 101" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="420.00" y="115.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 115.00)">+ </text>
+	<text x="437.00" y="115.00" textLength="116" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 437.00 115.00)">dajNazovOblasti(): std::string</text>
+	<text x="420.00" y="128.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 128.00)">+ </text>
+	<text x="437.00" y="128.00" textLength="57" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 437.00 128.00)">OblastNazov()</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1185 L 273 1185 L 273 1255 L 183 1255 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="215.00" y="1204.00" textLength="25" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 215.00 1204.00)">Okres</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 183 1212 L 272 1212" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="188.00" y="1226.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 188.00 1226.00)">+ </text>
+	<text x="205.00" y="1226.00" textLength="30" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 205.00 1226.00)">Okres()</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 569 L 1141 569 L 1141 760 L 778 760 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="934.00" y="588.00" textLength="50" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 934.00 588.00)">PrvaUroven</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 596 L 1140 596" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="783.00" y="610.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 610.00)">- </text>
+	<text x="800.00" y="610.00" textLength="139" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 610.00)">OPT_CONTAINS: int = 1 {readOnly}</text>
+	<text x="783.00" y="623.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 623.00)">- </text>
+	<text x="800.00" y="623.00" textLength="133" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 623.00)">OPT_INVALID: int = -1 {readOnly}</text>
+	<text x="783.00" y="636.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 636.00)">- </text>
+	<text x="800.00" y="636.00" textLength="150" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 636.00)">OPT_STARTSWITH: int = 2 {readOnly}</text>
+	<text x="783.00" y="649.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 649.00)">- </text>
+	<text x="800.00" y="649.00" textLength="82" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 649.00)">subString: std::string</text>
+	<text x="783.00" y="662.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 662.00)">- </text>
+	<text x="800.00" y="662.00" textLength="80" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 662.00)">unitType: std::string</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 669 L 1140 669" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="783.00" y="683.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 683.00)">+ </text>
+	<text x="800.00" y="683.00" textLength="118" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 683.00)">PrvaUroven(DatovaUroven&amp;)</text>
+	<text x="783.00" y="696.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 696.00)">+ </text>
+	<text x="800.00" y="696.00" textLength="80" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 696.00)">spustiUroven(): void</text>
+	<text x="783.00" y="709.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 709.00)">+ </text>
+	<text x="800.00" y="709.00" textLength="78" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 709.00)">zistiParametre(): int</text>
+	<text x="790.00" y="726.00" textLength="46" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 790.00 726.00)">«template»</text>
+	<text x="783.00" y="739.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 739.00)">+ </text>
+	<text x="800.00" y="739.00" textLength="338" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 739.00)">filtrujZaznamy(SequenceType&lt;DataType&gt;*, int, SequenceType&lt;DataType*&gt;&amp;): void</text>
+	<text x="783.00" y="752.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 783.00 752.00)">+ </text>
+	<text x="800.00" y="752.00" textLength="192" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 800.00 752.00)">vypisVystup(SequenceType&lt;DataType&gt;&amp;): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 825 377 L 1070 377 L 1070 492 L 825 492 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00" stroke-dasharray="6,3">
+  <path d="M 972 359 L 1090 359 L 1090 389 L 972 389 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="977.00" y="372.00" textLength="87" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 977.00 372.00)">DataType : typename</text>
+	<text x="919.00" y="402.00" textLength="56" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 919.00 402.00)">StvrtaUroven</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 825 410 L 1069 410" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="830.00" y="424.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 424.00)">- </text>
+	<text x="847.00" y="424.00" textLength="164" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 424.00)">quickSort: ds::adt::QuickSort&lt;DataType&gt;</text>
+	<text x="830.00" y="437.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 437.00)">- </text>
+	<text x="847.00" y="437.00" textLength="205" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 437.00)">SAMOHLASKY: std::string = { 'a', 'e', 'i'... {readOnly}</text>
+	<text x="830.00" y="450.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 450.00)">- </text>
+	<text x="847.00" y="450.00" textLength="80" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 450.00)">skLocale: std::locale</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 825 457 L 1069 457" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="830.00" y="471.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 471.00)">- </text>
+	<text x="847.00" y="471.00" textLength="153" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 471.00)">spocitajSamohlasky(std::string): size_t</text>
+	<text x="830.00" y="484.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 830.00 484.00)">+ </text>
+	<text x="847.00" y="484.00" textLength="220" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 847.00 484.00)">StvrtaUroven(ds::amt::ImplicitSequence&lt;DataType&gt;&amp;)</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 359 861 L 682 861 L 682 1013 L 359 1013 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="493.00" y="880.00" textLength="55" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 493.00 880.00)">TretiaUroven</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 359 888 L 681 888" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="364.00" y="902.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 902.00)">- </text>
+	<text x="381.00" y="902.00" textLength="122" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 902.00)">tabulkaKraje: TableType&lt;Kraj&gt;</text>
+	<text x="364.00" y="915.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 915.00)">- </text>
+	<text x="381.00" y="915.00" textLength="129" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 915.00)">tabulkaObce: TableType&lt;Obec&gt;</text>
+	<text x="364.00" y="928.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 928.00)">- </text>
+	<text x="381.00" y="928.00" textLength="140" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 928.00)">tabulkaOkresy: TableType&lt;Okres&gt;</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 359 935 L 681 935" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="364.00" y="949.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 949.00)">+ </text>
+	<text x="381.00" y="949.00" textLength="80" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 949.00)">spustiUroven(): void</text>
+	<text x="364.00" y="962.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 962.00)">+ </text>
+	<text x="381.00" y="962.00" textLength="123" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 962.00)">TretiaUroven(DatovaUroven&amp;)</text>
+	<text x="371.00" y="979.00" textLength="46" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 371.00 979.00)">«template»</text>
+	<text x="364.00" y="992.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 992.00)">+ </text>
+	<text x="381.00" y="992.00" textLength="298" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 992.00)">naplnTabulku(SequenceType&lt;DataType&gt;*, TableType&lt;DataType&gt;&amp;): void</text>
+	<text x="364.00" y="1005.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 364.00 1005.00)">+ </text>
+	<text x="381.00" y="1005.00" textLength="234" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 381.00 1005.00)">vyhladajVypis(TableType&lt;DataType&gt;&amp;, std::string&amp;): void</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 101 907 L 296 907 L 296 977 L 101 977 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="102.00" y="932.00" textLength="191" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 102.00 932.00)">ds::adt::Treap&lt;std::string, DataTabulky&lt;Type&gt;&gt;</text>
+	<text x="184.00" y="951.00" textLength="28" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 184.00 951.00)">«alias»</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00" stroke-dasharray="6,3">
+  <path d="M 218 889 L 316 889 L 316 919 L 218 919 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:square;stroke-linejoin:round; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="223.00" y="902.00" textLength="68" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 223.00 902.00)">Type : typename</text>
+	<text x="147.00" y="964.00" textLength="103" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 147.00 964.00)">TretiaUroven::TableType</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 398 1117 L 643 1117 L 643 1356 L 398 1356 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="485.00" y="1136.00" textLength="70" style="font-family:Calibri; font-weight:700; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 485.00 1136.00)">UzemnaJednotka</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 398 1144 L 642 1144" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="403.00" y="1158.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1158.00)">+ </text>
+	<text x="420.00" y="1158.00" textLength="64" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1158.00)">code: std::string</text>
+	<text x="403.00" y="1171.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1171.00)">+ </text>
+	<text x="420.00" y="1171.00" textLength="34" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1171.00)">level: int</text>
+	<text x="403.00" y="1184.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1184.00)">+ </text>
+	<text x="420.00" y="1184.00" textLength="95" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1184.00)">mediumTitle: std::string</text>
+	<text x="403.00" y="1197.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1197.00)">+ </text>
+	<text x="420.00" y="1197.00" textLength="63" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1197.00)">note: std::string</text>
+	<text x="403.00" y="1210.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1210.00)">+ </text>
+	<text x="420.00" y="1210.00" textLength="88" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1210.00)">officialTitle: std::string</text>
+	<text x="403.00" y="1223.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1223.00)">+ </text>
+	<text x="420.00" y="1223.00" textLength="82" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1223.00)">shortTitle: std::string</text>
+	<text x="403.00" y="1236.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1236.00)">+ </text>
+	<text x="420.00" y="1236.00" textLength="62" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1236.00)">sortNumber: int</text>
+	<text x="403.00" y="1249.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1249.00)">- </text>
+	<text x="420.00" y="1249.00" textLength="172" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1249.00)">TO_STRING_NO_INDEX: int = -1 {readOnly}</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 420 1251 L 592 1251" shape-rendering="auto"/>
+  <path d="M 398 1256 L 642 1256" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00">
+	<text x="403.00" y="1270.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1270.00)">+ </text>
+	<text x="420.00" y="1270.00" textLength="110" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1270.00)">fullInfo(): std::string {query}</text>
+	<text x="403.00" y="1283.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1283.00)">+ </text>
+	<text x="420.00" y="1283.00" textLength="195" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1283.00)">operator=(UzemnaJednotka&amp;): UzemnaJednotka</text>
+	<text x="403.00" y="1296.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1296.00)">+ </text>
+	<text x="420.00" y="1296.00" textLength="148" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1296.00)">operator==(UzemnaJednotka&amp;): bool</text>
+	<text x="403.00" y="1309.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1309.00)">+ </text>
+	<text x="420.00" y="1309.00" textLength="145" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1309.00)">toString(bool, int): std::string {query}</text>
+	<text x="403.00" y="1322.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1322.00)">+ </text>
+	<text x="420.00" y="1322.00" textLength="75" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1322.00)">UzemnaJednotka()</text>
+	<text x="403.00" y="1335.00" textLength="7" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1335.00)">+ </text>
+	<text x="420.00" y="1335.00" textLength="220" style="font-family:Calibri; font-weight:0; font-style:italic; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1335.00)">virtualnaMetodaLeboDynamicCastNejdeBezToho(): void</text>
+	<text x="403.00" y="1348.00" textLength="5" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 403.00 1348.00)">- </text>
+	<text x="420.00" y="1348.00" textLength="158" style="font-family:Calibri; font-weight:0; font-style:normal; font-size:10px; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:0.00 stroke-width:0; white-space: pre;" xml:space="preserve" transform="rotate(-0.00 420.00 1348.00)">vratOdsadenie(bool): std::string {query}</text>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 520 861 L 520 753" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 526 769 L 514 769 L 520 753 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 778 642 L 653 642" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 669 636 L 669 648 L 653 642 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 273 1227 L 398 1227" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 382 1233 L 382 1221 L 398 1227 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 273 1334 L 330 1334 L 330 1294 L 398 1294" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 382 1300 L 382 1288 L 398 1294 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 273 1120 L 326 1120 L 326 1177 L 398 1177" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 382 1183 L 382 1171 L 398 1177 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 520 476 L 520 575" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#FFFFFF;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 514 559 L 526 559 L 520 575 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 387 637 L 289 637 L 289 558 L 227 558" shape-rendering="auto"/>
+  <path d="M 242 552 L 227 558 L 242 564" shape-rendering="auto"/>
+  <path d="M 723 286 L 825 286" shape-rendering="auto"/>
+  <path d="M 810 292 L 825 286 L 810 280" shape-rendering="auto"/>
+  <path d="M 1117 569 L 1117 321" shape-rendering="auto"/>
+  <path d="M 1123 336 L 1117 321 L 1111 336" shape-rendering="auto"/>
+  <path d="M 947 569 L 947 492" shape-rendering="auto"/>
+  <path d="M 953 507 L 947 492 L 941 507" shape-rendering="auto"/>
+  <path d="M 723 418 L 825 418" shape-rendering="auto"/>
+  <path d="M 810 424 L 825 418 L 810 412" shape-rendering="auto"/>
+  <path d="M 521 224 L 521 136" shape-rendering="auto"/>
+  <path d="M 527 151 L 521 136 L 515 151" shape-rendering="auto"/>
+  <path d="M 682 961 L 778 961" shape-rendering="auto"/>
+  <path d="M 763 967 L 778 961 L 763 955" shape-rendering="auto"/>
+  <path d="M 248 349 L 317 349" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 307 354 L 317 349 L 307 344 L 297 349 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 224 744 L 279 744 L 279 697 L 387 697" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 377 702 L 387 697 L 377 692 L 367 697 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 1042 934 L 964 935" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 974 930 L 964 935 L 974 940 L 984 935 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 296 942 L 359 942" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:1.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 349 947 L 359 942 L 349 937 L 339 942 Z" shape-rendering="auto"/>
+</g>
+<g style="stroke-width:1;stroke-linecap:round;stroke-linejoin:bevel; fill:#000000;fill-opacity:0.00; stroke:#000000; stroke-opacity:1.00">
+  <path d="M 867 1027 L 867 1235 L 643 1235" shape-rendering="auto"/>
+  <path d="M 658 1229 L 643 1235 L 658 1241" shape-rendering="auto"/>
+  <path d="M 479 753 L 479 823 L 35 823 L 35 1036 L 507 1036 L 507 1117" shape-rendering="auto"/>
+  <path d="M 501 1102 L 507 1117 L 513 1102" shape-rendering="auto"/>
+</g>
+</svg>
